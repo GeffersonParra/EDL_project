@@ -1,10 +1,11 @@
 /* Login */
 .Login{
-    height: 400px;
-    width: 1000px;
-    position: relative;
-    top: 80px;
-    left: 13%;
+    height: 30vw;
+    width: 70%;
+    position: absolute;
+    top: 22.5%;
+    left: 15%;
+    right: 15%;
     background-color: rgb(29, 29, 29);
     flex-wrap: wrap;
     color:white;
@@ -15,8 +16,8 @@
 #Text1{
     position: relative;
     text-align: center;
-    display: flexbox;
     left: 20%;
+    right: 20%;
     top: 20px;
     width:60%;
     border-bottom-width: 2px;
@@ -26,7 +27,7 @@
 
 #form1{
     position:relative;
-    top: 400px;
+    top: 40vw;
     left: 25%;
     background-color: white;
     padding-top: 10%;
@@ -40,9 +41,10 @@ body{
 
 .input-box{
     position: relative;
-    top: 50px;
-    left: 28%;
-    width: 450px;
+    top: 4vw;
+    left: 30%;
+    right: 30%;
+    width: 40%;
 }
 
 .input-box input{
@@ -119,22 +121,24 @@ body{
 #btnlogin{
     font-weight: 500;
     position: relative;
-    top: 90px;
+    top: 7vw;
     left: 35%;
+    right: 35%;
     background-color: #f5e235;
     border: none;
     border-radius: 2px;
     height: 40px;
-    width: 300px;
+    width: 30%;
     box-shadow: 5px 5px rgb(80, 80, 80);
 }
 
 #linkpw{
-    width: 400px;
+    width: 30%;
     text-align: center;
     position: relative;
-    top: 60px;
-    left: 30%;
+    top: 5.5vw;
+    left: 35%;
+    right: 35%;
     font-weight: 700;
     color: white;
 }

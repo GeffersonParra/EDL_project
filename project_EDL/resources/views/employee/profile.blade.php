@@ -2,6 +2,7 @@
 @section('title', 'Mi Perfil | EDL')
 <link rel="stylesheet" href="css/styledashboard.css">
 <link rel="stylesheet" href="css/info.css">
+<script src="js/profile.js" defer></script>
 @section('content')
 <div id="basicdata">
     <h1>Tus Datos Básicos</h1>
@@ -61,6 +62,13 @@
         <p id="text3">Estado: </p>
         <div>{{$usuario->status}}</div>
     </div>
+    @if(session('success'))
+        <div id='message-container'>
+            <box-icon id='icon' name='check-circle'></box-icon>
+            <h4>{{ session('success') }}</h4>
+        </div>
+    @endif
     <a href="{{ route( 'my_profile.edit' ) }}"><button id="Editar">Modificar Datos</button></a>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 </div>
 @endsection

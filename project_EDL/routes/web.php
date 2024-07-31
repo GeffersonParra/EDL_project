@@ -3,9 +3,11 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ReportController;
 use App\Http\Middleware\RolMiddleware;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Gate;
+use SebastianBergmann\CodeCoverage\Report\Xml\Report;
 
 Route::get('/', function () {
     return view('welcome');
@@ -16,6 +18,10 @@ Route::middleware('auth', 'verified')->group(function () {
     Route::get('/my_profile', [EmployeeController::class, 'profile'])->name('my_profile');
     Route::get('/my_profile/edit', [EmployeeController::class, 'edit'])->name('my_profile.edit');
     Route::put('/my_profile/edit/{id}', [EmployeeController::class, 'update'])->name('my_profile.update');
+    Route::get('/reports', [ReportController::class, 'show'])->name('reports');
+    Route::get('/reports/new', [ReportController::class, 'new'])->name('reports.new');
+    Route::post('/reports/new/in', [ReportController::class, 'storein'])->name('reports.newin');
+    Route::post('/reports/new/out', [ReportController::class, 'storeout'])->name('reports.newout');
 });
 
 Route::get('admin/dashboard', [AdminController::class, 'dashboard'])->middleware(RolMiddleware::class)->name('admin.dashboard');

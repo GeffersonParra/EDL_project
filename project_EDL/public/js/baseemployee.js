@@ -1,5 +1,5 @@
 document.querySelectorAll('.list-item').forEach(item => {
-    item.addEventListener('click', function (event) {
+    item.addEventListener('mouseover', function (event) {
         event.stopPropagation();
         document.querySelectorAll('.mini-menu').forEach(menu => {
             menu.style.display = 'none';
@@ -17,24 +17,20 @@ document.addEventListener('click', function () {
     });
 });
 
-document.getElementById('imagen').addEventListener('click', function() {
+document.getElementById('imagen').addEventListener('click', function () {
     document.getElementById('photo').click();
 });
 
-document.getElementById('Editar').addEventListener('click', function() {
-    alert("Cambios Guardados Exitosamente.")
-})
-
-document.getElementById('photo').addEventListener('change', function(event) {
+document.getElementById('photo').addEventListener('change', function (event) {
     const file = event.target.files[0];
     if (file) {
         const reader = new FileReader();
-        
-        reader.onload = function(e) {
+
+        reader.onload = function (e) {
             const preview = document.getElementById('editfoto');
             preview.src = e.target.result;
         }
-        
+
         reader.readAsDataURL(file);
     }
 });

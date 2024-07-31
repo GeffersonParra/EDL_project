@@ -32,11 +32,7 @@
                     <div class="mini-menu">
                         <ul>
                             <a href="reports">
-                                <li>Constancias Generadas</li>
-                            </a>
-                            <br>
-                            <a href="newreport">
-                                <li>Generar una nueva Constancia</li>
+                                <li>Ver Constancias Generadas</li>
                             </a>
                         </ul>
                     </div>

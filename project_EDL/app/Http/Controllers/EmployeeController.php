@@ -38,6 +38,6 @@ class EmployeeController extends Controller
             $datos["photo"]=$request->file("photo")->store("uploads", "public");
         }
         User::where('id', '=', $id)->update($datos);
-        return redirect()->route("my_profile");
+        return redirect()->route("my_profile")->with('success', 'Datos modificados exitosamente.');
     }
 }

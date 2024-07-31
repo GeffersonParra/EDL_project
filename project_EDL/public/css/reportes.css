@@ -1,0 +1,72 @@
+#tabla {
+    position: relative;
+    border-collapse: collapse;
+    top: 5vw;
+    left: 15%;
+    right: 15%;
+    width: 70%;
+    text-align: center;
+}
+
+#tabla th {
+    background-color: #f5e235;
+    border-width: 2px;
+    border-color: black;
+}
+
+#tabla td {
+    color: white;
+    border-width: 2px;
+    border-color: black;
+    max-width: 12vw;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+
+#tabla tr:nth-child(even) {
+    background-color: #202020;
+}
+
+#tabla tr:nth-child(odd) {
+    background-color: #5a5a5a;
+}
+
+#nuevo{
+    position: absolute;
+    top: 40vw;
+    left: 35%;
+    right: 35%;
+    font-weight: 500;
+    background-color: #1368d8;
+    border: none;
+    border-radius: 2px;
+    height: 40px;
+    width: 30%;
+    box-shadow: 5px 5px rgb(80, 80, 80);
+}
+
+#reportform{
+    position: absolute;
+    top: 37.5%;
+    bottom: 37.5%;
+    left: 25%;
+    right: 25%;
+    height: 25%;
+    width: 50%;
+    border-radius: 30px;
+    background-color: #1368d8;
+}
+
+#reportform label{
+    position: relative;
+    font-weight: 700;
+    top: 5vw;
+}
+
+select{
+    position: relative;
+    top: 5vw;
+    left: 5%;
+    width: 350px;
+}

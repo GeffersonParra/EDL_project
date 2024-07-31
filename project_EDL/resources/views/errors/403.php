@@ -12,18 +12,10 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: grey;
+            background-color: rgb(29, 29, 29);
             font-family: 'Arial', sans-serif;
             color: #f5e235;
             overflow: hidden;
-        }
-
-        h1{
-            position: absolute;
-            top: 5%;
-            left: 10%;
-            color: white;
-            font-size: 40px;
         }
 
         .container {
@@ -50,9 +42,12 @@
 
         .container h1 {
             position: relative;
+            left: 15%;
+            right: 15%;
+            width: 70%;
             font-size: 6rem;
             margin: 0;
-            color: #f5e235;
+            color: black;
             z-index: 1;
         }
 
@@ -71,7 +66,7 @@
             padding: 10px 20px;
             font-size: 1rem;
             color: #fff;
-            background-color: #f5e235;
+            background-color: black;
             text-decoration: none;
             border-radius: 5px;
             transition: background-color 0.3s ease;
@@ -79,7 +74,7 @@
         }
 
         .btn-home:hover {
-            background-color: #d4be30;
+            background-color: rgb(131, 121, 28);
         }
 
         .glow {
@@ -95,11 +90,22 @@
 
         .title{
             position: absolute;
-            top: 5%;
-            left: 10%;
+            top: 33%;
+            left: 48%;
             width: 100px;
             height: 100px;
+            transform: scale(15, 15);
             background-color: rgb(29, 29, 29);
+        }
+
+        .title h1{
+            color: rgba(255, 255, 255, 0.3);
+            position: absolute;
+            top: 0.35vw;
+            bottom: 0.35vw;
+            left: 10%;
+            right: 10%;
+            font-size: 40px;
         }
     </style>
 </head>
@@ -109,9 +115,10 @@
 <body>
     <div class="container">
         <div class="glow"></div>
+        <p>Hey hey, espera, ¿A dónde vas?</p>
         <h1>403</h1>
         <p>Ruta exclusiva para administradores</p>
-        <a href="/" class="btn-home">Volver al inicio</a>
+        <a href="/dashboard" class="btn-home">Volver al inicio</a>
     </div>
 </body>
 </html>

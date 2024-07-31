@@ -46,7 +46,7 @@
         </div>
         <div class="info-box">
             <label for="telephone">Teléfono: </label>
-            <input type="number" name="telephone" min="3000000000" max="3800000000" step="0.01" id="telephone"
+            <input type="tel" name="telephone" min="3000000000" max="3800000000" step="0.01" id="telephone"
                 value="{{$usuario->telephone}}" required>
         </div>
         <div class="info-box2">
