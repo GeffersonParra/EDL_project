@@ -42,8 +42,11 @@
     </tr>
 </table>
 <div id="reportform">
-    <button id="in">Constancia de ingreso</button>
-    <button id="out">Constancia de salida</button>
+    <form action="{{ route('reports.create') }}" method="POST">
+        @csrf
+    <button id="in" name="action" value="entrada">Constancia de ingreso</button>
+    <button id="out" name="action" value="salida">Constancia de salida</button>
+    </form>
 </div>
 <button id="Nuevo">Nueva Constancia</button>
 <a href="{{ route( 'reports.new' ) }}"><button id="Nuevo">Nueva Constancia</button></a>

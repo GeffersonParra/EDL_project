@@ -20,8 +20,7 @@ Route::middleware('auth', 'verified')->group(function () {
     Route::put('/my_profile/edit/{id}', [EmployeeController::class, 'update'])->name('my_profile.update');
     Route::get('/reports', [ReportController::class, 'show'])->name('reports');
     Route::get('/reports/new', [ReportController::class, 'new'])->name('reports.new');
-    Route::post('/reports/new/in', [ReportController::class, 'storein'])->name('reports.newin');
-    Route::post('/reports/new/out', [ReportController::class, 'storeout'])->name('reports.newout');
+    Route::post('/reports/new', [ReportController::class, 'generate'])->name('reports.create');
 });
 
 Route::get('admin/dashboard', [AdminController::class, 'dashboard'])->middleware(RolMiddleware::class)->name('admin.dashboard');
