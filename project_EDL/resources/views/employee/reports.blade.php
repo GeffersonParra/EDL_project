@@ -44,8 +44,7 @@
 <div id="reportform">
     <form action="{{ route('reports.create') }}" method="POST">
         @csrf
-    <button id="in" name="action" value="entrada">Constancia de ingreso</button>
-    <button id="out" name="action" value="salida">Constancia de salida</button>
+    <button id="in" name="action" value="trabajo">Constancia de trabajo</button>
     </form>
 </div>
 <button id="Nuevo">Nueva Constancia</button>

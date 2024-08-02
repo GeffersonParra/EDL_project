@@ -23,15 +23,15 @@ class ReportController extends Controller
         $usuario = $request->user();
         $report->id_employee = $usuario->id;
 
-        if ($request->input("action") == "entrada") {
+        if ($request->input("action") == "trabajo") {
             $report->type = 1;
             $report->save();
-            $pdf = FacadePdf::loadView("employee.pdf.entrada", compact('usuario'));
-            return $pdf->stream('Constancia_Entrada_EDL.pdf');
+            $pdf = FacadePdf::loadView("employee.pdf.trabajo", compact('usuario', 'report'));
+            return $pdf->download('Constancia_Trabajo_EDL.pdf');
         } else if ($request->input("action") == "salida") {
             $report->type = 2;
             $report->save();
-            $pdf = FacadePdf::loadView("employee.pdf.salida", compact('usuario'));
+            $pdf = FacadePdf::loadView("employee.pdf.salida", compact('usuario', 'report'));
             return $pdf->stream('Constancia_Salida_EDL.pdf');
         }
         return redirect()->route("reports");
