@@ -1,9 +1,9 @@
 #editfoto{
-    height: 35%;
-    width: 21%;
+    height: 16vw;
+    width: 26%;
     position: absolute;
-    top: 17%;
-    left: 39.5%;
+    top: 1.8%;
+    left: 37%;
     border-radius: 100%;
     background-color: white;
     text-align: center;
@@ -11,20 +11,20 @@
     box-shadow: 2px 0px 5px rgb(0, 0, 0);
 }
 
-.contenedor{
+form{
     position: relative;
-    width: 50%;
-    left: 25%;
-    right: 25%;
+    width: 80%;
+    left: 10%;
+    right: 10%;
 }
 
 .imagetext {
     position: absolute;
     font-style: normal;
-    width: 20.7%;
-    height: 16.4%;
-    top: 46.6%;
-    left: 50.5%;
+    width: 26%;
+    height: 8vw;
+    top: 13.3vw;
+    left: 50%;
     transform: translate(-50%, -50%);
     background-color: rgba(0, 0, 0, 0.4);
     color: rgb(255, 255, 255);
@@ -96,7 +96,7 @@
 .info-box{
     position: relative;
     top: 330px;
-    left: 10%;
+    left: 25%;
     width: 450px;
 }
 
@@ -151,7 +151,7 @@
 .info-box2{
     position: relative;
     top: -140px;
-    left: 34%;
+    left: 40%;
     width: 450px;
 }
 
@@ -206,9 +206,9 @@
 .info-box3{
     position: relative;
     top: -8vw;
-    left: 30%;
-    right: 30%;
-    width: 40%;
+    left: 37.5%;
+    right: 37.5%;
+    width: 25%;
 }
 
 .info-box3:hover #readonly3{
@@ -255,14 +255,19 @@
     text-align: left;
     width: 205px;
     top: -60%;
-    left: 42.5%;
+    left: 6.5%;
     color: white;
     font-style: normal;
 }
 
+#option{
+    position: absolute;
+    bottom: 5%;
+    width: 100%;
+}
+
 #Editar{
     position: relative;
-    top: -90px;
     left: 2%;
     font-weight: 500;
     background-color: #1368d8;
@@ -276,7 +281,6 @@
 
 #Cancelar{
     position: relative;
-    top: -90px;
     left: 6%;
     font-weight: 500;
     background-color: #6d6d6d;
@@ -370,5 +374,11 @@
     .contenedor {
         width: 30%;
         padding: 20px;
+    }
+    #Editar{
+        width: 40%;
+    }
+    #Cancelar{
+        width: 40%;
     }
 }
