@@ -1,5 +1,5 @@
 @extends('employee.basedashboard')
-@section('title', 'Mi Perfil | EDL')
+@section('title', 'Editar Tus Datos | EDL')
 <base href="/">
 <link rel="stylesheet" href="css/styledashboard.css">
 <link rel="stylesheet" href="css/editar.css">
@@ -18,7 +18,7 @@
             <box-icon type='solid' name='camera-plus'></box-icon>
         </div>
     </div>
-    <div id="contenedor">
+    <div class="contenedor">
         <div class="info-box">
             <p class="text">Nombres: </p>
             <div>{{$usuario->name}}</div>
