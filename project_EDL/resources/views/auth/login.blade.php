@@ -10,17 +10,17 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <div class="container-fluid">
+    <div class="container-fluid" id="navbar">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" href="#" style="position:relative; left: 300%"><h4>EDL</h4></a>
+          <a class="nav-link active" href="#" id="titulonav"><p>EDL</p></a>
         </li>
       </ul>
     </div>
   </nav>
   <div class="Login" id="Login">
     <div id="Text1">
-        <h2>Ingresa a tu cuenta</h2>
+        <p>Ingresa a tu cuenta</p>
     </div>
     <form method="POST" action="{{ route('login') }}">
         @csrf

@@ -165,3 +165,65 @@ hr{
     width: 60%;
     height: fit-content;
 }
+
+@media (max-width: 320px) {
+    .contenedor {
+        width: 100%;
+    }
+}
+
+/* Teléfonos Medianos */
+@media (max-width: 375px) {
+    .contenedor {
+        width: 95%;
+        padding: 15px;
+    }
+}
+
+/* Teléfonos Grandes */
+@media (max-width: 425px) {
+    .contenedor {
+        width: 90%;
+        padding: 20px;
+    }
+}
+
+/* Tablets Pequeñas */
+@media (max-width: 600px) {
+    .contenedor {
+        width: 80%;
+        padding: 20px;
+    }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+    .contenedor {
+        width: 70%;
+        padding: 20px;
+    }
+}
+
+/* Laptops Pequeñas */
+@media (max-width: 1024px) {
+}
+
+/* Laptops Medianas */
+@media (max-width: 1280px) {
+}
+
+/* Escritorios Pequeños */
+@media (max-width: 1366px) {
+}
+
+/* Escritorios Medianos */
+@media (max-width: 1440px) {
+}
+
+/* Escritorios Grandes */
+@media (max-width: 1600px) {
+}
+
+/* Escritorios Muy Grandes */
+@media (max-width: 1920px) {
+}

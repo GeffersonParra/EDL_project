@@ -96,7 +96,7 @@ form{
 .info-box{
     position: relative;
     top: 330px;
-    left: 25%;
+    left: 23%;
     width: 450px;
 }
 
@@ -151,7 +151,7 @@ form{
 .info-box2{
     position: relative;
     top: -140px;
-    left: 40%;
+    left: 42%;
     width: 450px;
 }
 
@@ -205,10 +205,10 @@ form{
 
 .info-box3{
     position: relative;
-    top: -8vw;
-    left: 37.5%;
-    right: 37.5%;
-    width: 25%;
+    top: -9vw;
+    left: 40%;
+    right: 40%;
+    width: 20%;
 }
 
 .info-box3:hover #readonly3{
@@ -268,7 +268,6 @@ form{
 
 #Editar{
     position: relative;
-    left: 2%;
     font-weight: 500;
     background-color: #1368d8;
     border: none;
@@ -281,7 +280,6 @@ form{
 
 #Cancelar{
     position: relative;
-    left: 6%;
     font-weight: 500;
     background-color: #6d6d6d;
     border: none;
@@ -374,11 +372,5 @@ form{
     .contenedor {
         width: 30%;
         padding: 20px;
-    }
-    #Editar{
-        width: 40%;
-    }
-    #Cancelar{
-        width: 40%;
     }
 }
