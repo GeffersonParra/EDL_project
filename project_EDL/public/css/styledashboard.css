@@ -1,133 +1,129 @@
 body{
-    justify-content: center;
-    align-items: center;
+    display: flex;
     height: 100%;
+    width: 100%;
 }
 
-#dashboard{
-    position: absolute;
-    left: 0%;
+.vertical-nav{
     background-color: rgb(29, 29, 29);
     height: 100%;
-    width: 20%;
+    flex-direction: column;
+    overflow: hidden;
 }
 
-#Text1{
-    position: relative;
-    top: 1%;
+.text1{
     color: white;
     text-align: center;
     text-decoration: none;
 }
 
-#foto{
-    height: 20%;
-    width: 49%;
-    position: relative;
-    top: 4%;
-    left: 25%;
-    border-radius: 100%;
-    background-color: transparent;
-    text-align: center;
+.foto{
     border: solid, 2px, rgb(0, 0, 0);
     box-shadow: 2px 0px 5px rgb(0, 0, 0);
+    min-width: 40%;
 }
 
-#Nombre{
-    position: relative;
-    top: 5%;
-    text-align: center;
+.nombre{
     color: white;
 }
 
-#Cargo{
-    position: relative;
-    top: 4.5%;
-    text-align: center;
+.cargo{
     color: white;
     font-style: italic;
     font-weight: 100;
 }
 
-#background{
-    position: absolute;
-    left: 20%;
-    height: 100%;
-    width: 80%;
-    background-color: grey;
-    font-style: italic;
-    font-weight: 100;
-    text-align: center;
-}
-
-#content{
-    position: absolute;
-    left: 20.5%;
-    top: 1.5%;
-    height: 97.5%;
-    width: 79%;
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 1rem;
+    width: 81%;
     background-color: rgb(29, 29, 29);
     font-style: italic;
     font-weight: 100;
-    text-align: center;
     border-radius: 20px;
     overflow: auto;
 }
 
-#content h1{
-    position: relative;
-    top: 4%;
+.content h1{
     font-style: normal;
     font-weight: 300;
     color: white;
 }
 
-#logout{
-    position: absolute;
-    top: 92%;
-    left: 5%;
+.logout{
     font-weight: 500;
     background-color: #f5e235;
     border: none;
     border-radius: 2px;
-    height: 40px;
+    height: 5%;
     width: 90%;
+    margin-top: auto;
+    margin-bottom: 10%;
     box-shadow: 5px 5px rgb(80, 80, 80);
+    transition: .5s;
 }
 
-#opciones{
+.logout:hover{
+    background-color: #ffffff;
+    transition: .5s;
+}
+
+.opciones{
+    flex-direction: column;
     list-style: none;
-    position: relative;
     font-size: large;
-    top: 9%;
-    left: 15%;
     color: white;
+    width: 120%;
 }
 
 #encabezado{
+    margin-left: 2rem;
     color: white;
+    transition: .8s;
+}
+
+#encabezado:hover{
+    color:#f5e235;
+    transition: .8s;
+}
+
+#encabezado:focus{
+    margin-left: 4rem;
 }
 
 .mini-menu {
+    margin-top: -15%;
+    margin-left: 3rem;
     list-style: none;
     display: none;
-    padding: 8px;
+    flex-direction: column;
+    padding: 1%;
     z-index: 1;
+    opacity: 0;
+    transition: .8s;
+}
+
+.mini-menu.visible {
+    margin-top: 0%;
+    opacity: 1;
+    transition: .8s;
 }
 
 .mini-menu ul{
-    list-style: none;
+    margin-right: 1rem;
     font-size: medium;
-    position: relative;
-    left: -11%;
+    width: 8rem;
 }
 
 .list-item{
+    margin-right: 4rem;
     padding-top: 20px;
+    transition: 0.8s;
 }
 
 .list-item a{
-    position: relative;
     text-decoration: none;
     color: rgb(116, 116, 116);
 }
@@ -147,12 +143,11 @@ body{
 hr{
     color: white;
     height: 2px;
+    margin-top: -0.5rem;
     width: 40%;
-    position: relative;
-    left: 30%;
 }
 
-#basicdata{
+.basicdata{
     position: relative;
     top: 5%;
     text-align: center;
@@ -166,64 +161,47 @@ hr{
     height: fit-content;
 }
 
-@media (max-width: 320px) {
-    .contenedor {
+@media(max-width: 1000px) {
+    body{
+        display: flex;
+        flex-direction: column;
+        height: 90rem;
+    }
+
+    .vertical-nav{
+        flex-direction: column;
+        height: 4%;
         width: 100%;
+        justify-items: center;
     }
-}
 
-/* Teléfonos Medianos */
-@media (max-width: 375px) {
-    .contenedor {
-        width: 95%;
-        padding: 15px;
-    }
-}
-
-/* Teléfonos Grandes */
-@media (max-width: 425px) {
-    .contenedor {
+    .content{
+        margin-top: 4%;
         width: 90%;
-        padding: 20px;
+        height:fit-content;
     }
-}
 
-/* Tablets Pequeñas */
-@media (max-width: 600px) {
-    .contenedor {
-        width: 80%;
-        padding: 20px;
+    .foto{
+        display: none;
     }
-}
 
-/* Tablets */
-@media (max-width: 768px) {
-    .contenedor {
-        width: 70%;
-        padding: 20px;
+    .cargo{
+        display: none;
     }
-}
 
-/* Laptops Pequeñas */
-@media (max-width: 1024px) {
-}
+    .nombre{
+        display: none;
+    }
 
-/* Laptops Medianas */
-@media (max-width: 1280px) {
-}
+    #encabezado{
+        display: none;
+    }
 
-/* Escritorios Pequeños */
-@media (max-width: 1366px) {
-}
+    .logout{
+        display: none;
+    }
 
-/* Escritorios Medianos */
-@media (max-width: 1440px) {
-}
-
-/* Escritorios Grandes */
-@media (max-width: 1600px) {
-}
-
-/* Escritorios Muy Grandes */
-@media (max-width: 1920px) {
+    .text1{
+        margin-top: 0.5rem;
+    }
 }

@@ -1,23 +1,11 @@
-@import 'node_modules/bulma/css/bulma.min.css';
-
-#navbar{
-    height: 5vw;
-}
-
-#titulonav{
-    position:absolute;
-    top: 10%;
-    left: 45%;
-    width: 10%;
-}
+html, body {
+    height: 100%; 
+    margin: 0; 
+  }
 
 .Login{
-    height: 30vw;
-    width: 70%;
-    position: absolute;
-    top: 22.5%;
-    left: 15%;
-    right: 15%;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
     background-color: rgb(29, 29, 29);
     flex-wrap: wrap;
     color:white;
@@ -25,39 +13,15 @@
     box-shadow: 5px 5px rgb(80, 80, 80);
 }
 
-#Text1{
-    position: relative;
-    text-align: center;
-    left: 20%;
-    right: 20%;
-    top: 20px;
-    width:60%;
-    font-weight: 600;
-    border-bottom-width: 2px;
-    border-bottom-style: groove;
-    border-bottom-color: grey;
-}
-
-#form1{
-    position:relative;
-    top: 40vw;
-    left: 25%;
-    background-color: white;
-    padding-top: 10%;
-}
-
-body{
-    background-color: grey;
-    justify-content: center;
-    align-items: center;
+.form{
+    margin-bottom: 10.25rem;
 }
 
 .input-box{
     position: relative;
-    top: 4vw;
-    left: 30%;
-    right: 30%;
-    width: 40%;
+    left: 25%;
+    right: 25%;
+    width: 50%;
 }
 
 .input-box input{
@@ -102,6 +66,7 @@ body{
 }
 
 #usr{
+    font-size: 1rem;
     position: absolute;
     text-align: center;
     width: 105px;
@@ -111,6 +76,7 @@ body{
 }
 
 #psw{
+    font-size: 1rem;
     position: absolute;
     text-align: center;
     width: 90px;
@@ -120,6 +86,7 @@ body{
 }
 
 #i1{
+    font-size: 1rem;
     position: absolute;
     top: 35%;
     right: 10px;
@@ -131,24 +98,19 @@ body{
     right: 10px;
 }
 
-#btnlogin{
+.btnlogin{
     font-weight: 500;
-    position: relative;
-    top: 7vw;
-    left: 35%;
-    right: 35%;
     background-color: #f5e235;
+    margin-left: 25%;
+    margin-top: 3%;
     border: none;
     border-radius: 2px;
-    height: 40px;
-    width: 30%;
+    height: 15%;
     box-shadow: 5px 5px rgb(80, 80, 80);
 }
 
-#linkpw{
-    width: 30%;
+.linkpw{
     text-align: center;
-    position: relative;
     top: 5.5vw;
     left: 35%;
     right: 35%;
@@ -156,540 +118,14 @@ body{
     color: white;
 }
 
-#linkpw a{
+.linkpw a{
     font-weight: 500;
     color: white;
     text-decoration: none;
 }
 
-#error{
-    position: relative;
-    top: 110px;
-    left: 35%;
-    width: fit-content;
+.error{
     color: #f5e235;
     list-style: none;
     text-align: center;
-}
-/* Smartphones Pequeños*/
-@media (max-width: 480px) {
-    #navbar{
-        height: 12vw;
-        font-size: 30px;
-    }
-
-    .Login{
-        top: 20%;
-        height: 120vw;
-    }
-
-    #Text1{
-        font-size: 23px;
-    }
-
-    #btnlogin{
-        top: 28vw;
-        width: 80%;
-        left: 10%;
-    }
-
-    #linkpw{
-        width: 80%;
-        top: 18vw;
-        left: 10%;
-    }
-
-    .input-box{
-        top: 15vw;
-        width: 80%;
-        left: 10%;
-    }
-
-    #error{
-        top: 140px;
-        width: 80%;
-        left: 5%;
-    }
-}
-
-/* Smartphones Medianos */
-@media (min-width: 480px) and (max-width: 768px) {
-    #titulonav{
-        top: 12%;
-        font-size: 35px;
-    }
-
-    #navbar{
-        height: 12vw;
-    }
-
-    #Text1{
-        font-size: 33px;
-    }
-
-    input{
-        height: 80px;
-    }
-
-    #usr{
-        top: 28%;
-        width: 160px;
-    }
-
-    #psw{
-        top: 17px;
-        width: 130px;
-    }
-
-    .input-box input{
-        height: 60px;
-    }
-
-    #i1, #i2{
-        top: 33%;
-        font-size: 30px;
-    }
-
-    label{
-        font-size: 25px;
-    }
-
-    .Login{
-        top: 20%;
-        height: 60%;
-    }
-
-    input{
-        font-size: 28px;
-    }
-
-    #btnlogin{
-        top: 22vw;
-        width: 80%;
-        height: 8vw;
-        left: 10%;
-        font-size: 22px;
-    }
-
-    #linkpw{
-        width: 80%;
-        top: 18vw;
-        left: 10%;
-        font-size: 24px;
-    }
-
-    .input-box{
-        top: 14vw;
-        width: 80%;
-        left: 10%;
-    }
-
-    #error{
-        top: 190px;
-        width: 80%;
-        left: 5%;
-        font-size: 24px;
-    }
-}
-
-/*Smartphones Grandes */
-@media (min-width: 768px) and (max-width: 800px){
-    #titulonav{
-        top: 12%;
-        font-size: 35px;
-    }
-
-    #navbar{
-        height: 12vw;
-    }
-
-    #Text1{
-        font-size: 33px;
-    }
-
-    input{
-        height: 80px;
-    }
-
-    #usr{
-        top: 28%;
-        width: 160px;
-    }
-
-    #psw{
-        top: 17px;
-        width: 130px;
-    }
-
-    .input-box input{
-        height: 60px;
-    }
-
-    #i1, #i2{
-        top: 33%;
-        font-size: 30px;
-    }
-
-    label{
-        font-size: 25px;
-    }
-
-    .Login{
-        top: 20%;
-        height: 60%;
-    }
-
-    input{
-        font-size: 28px;
-    }
-
-    #btnlogin{
-        top: 22vw;
-        width: 80%;
-        height: 8vw;
-        left: 10%;
-        font-size: 22px;
-    }
-
-    #linkpw{
-        width: 80%;
-        top: 18vw;
-        left: 10%;
-        font-size: 24px;
-    }
-
-    .input-box{
-        top: 14vw;
-        width: 80%;
-        left: 10%;
-    }
-
-    #error{
-        top: 190px;
-        width: 80%;
-        left: 5%;
-        font-size: 24px;
-    }
-}
-
-@media (min-width: 800px) and (max-width: 920px){
-    #titulonav{
-        top: -5%;
-        font-size: 34px;
-    }
-
-    #navbar{
-        height: 6vw;
-    }
-
-    #Text1{
-        font-size: 20px;
-    }
-
-    #usr{
-        top: 28%;
-        width: 100px;
-        font-size: 15px;
-    }
-
-    #psw{
-        top: 19px;
-        width: 80px;
-        font-size: 15px;
-    }
-
-    .input-box input{
-        height: 40px;
-    }
-
-    #i1, #i2{
-        top: 33%;
-        font-size: 20px;
-    }
-
-    label{
-        font-size: 25px;
-    }
-
-    .Login{
-        top: 20%;
-        height: 75%;
-    }
-
-    input{
-        font-size: 15px;
-    }
-
-    #btnlogin{
-        top: 7vw;
-        width: 80%;
-        height: 4vw;
-        left: 10%;
-        font-size: 15px;
-    }
-
-    #linkpw{
-        width: 80%;
-        top: 4vw;
-        left: 10%;
-        font-size: 14px;
-    }
-
-    .input-box{
-        top: 4vw;
-        width: 80%;
-        left: 10%;
-    }
-
-    #error{
-        top: 60px;
-        width: 80%;
-        left: 5%;
-        font-size: 15px;
-    }
-}
-
-/* Laptops Pequeñas */
-@media (min-width: 920px) and (max-width: 1024px) {
-    #titulonav{
-        top: 12%;
-        font-size: 50px;
-    }
-
-    #navbar{
-        height: 12vw;
-    }
-
-    #Text1{
-        font-size: 49px;
-    }
-
-    #usr{
-        top: 28%;
-        width: 160px;
-    }
-
-    #psw{
-        top: 25px;
-        width: 130px;
-    }
-
-    .input-box input{
-        height: 70px;
-    }
-
-    #i1, #i2{
-        top: 33%;
-        font-size: 30px;
-    }
-
-    label{
-        font-size: 25px;
-    }
-
-    .Login{
-        top: 20%;
-        height: 70%;
-    }
-
-    input{
-        font-size: 28px;
-    }
-
-    #btnlogin{
-        top: 22vw;
-        width: 80%;
-        height: 6vw;
-        left: 10%;
-        font-size: 22px;
-    }
-
-    #linkpw{
-        width: 80%;
-        top: 18vw;
-        left: 10%;
-        font-size: 24px;
-    }
-
-    .input-box{
-        top: 15vw;
-        width: 80%;
-        left: 10%;
-    }
-
-    #error{
-        top: 280px;
-        width: 80%;
-        left: 5%;
-        font-size: 24px;
-    }
-}
-
-/* Laptops Medianas */
-@media (min-width: 1024px) and (max-width:1152px){
-    #titulonav{
-        top: 5%;
-        font-size: 40px;
-    }
-
-    #navbar{
-        height: 8vw;
-    }
-
-    #Text1{
-        font-size: 40px;
-    }
-
-    #usr{
-        top: 28%;
-        width: 130px;
-    }
-
-    #psw{
-        top: 17px;
-        width: 105px;
-    }
-
-    .input-box input{
-        height: 45px;
-    }
-
-    #i1, #i2{
-        top: 33%;
-        font-size: 20px;
-    }
-
-    label{
-        font-size: 20px;
-    }
-
-    .Login{
-        top: 25%;
-        height: 65%;
-    }
-
-    input{
-        font-size: 18px;
-    }
-
-    #btnlogin{
-        top: 6vw;
-        width: 80%;
-        height: 3vw;
-        left: 10%;
-        font-size: 15px;
-    }
-
-    #linkpw{
-        width: 80%;
-        top: 4vw;
-        left: 10%;
-        font-size: 15px;
-    }
-
-    .input-box{
-        top: 4vw;
-        width: 80%;
-        left: 10%;
-    }
-
-    #error{
-        top: 70px;
-        width: 80%;
-        left: 8%;
-        font-size: 16px;
-    }
-}
-
-/* Escritorios Pequeños */
-@media (min-width: 1365px) and (max-width:1439px) {
-    #titulonav{
-        top: 12%;
-        font-size: 35px;
-    }
-
-    #navbar{
-        height: 12vw;
-    }
-
-    #Text1{
-        font-size: 33px;
-    }
-
-    input{
-        height: 80px;
-    }
-
-    #usr{
-        top: 28%;
-        width: 160px;
-    }
-
-    #psw{
-        top: 17px;
-        width: 130px;
-    }
-
-    .input-box input{
-        height: 60px;
-    }
-
-    #i1, #i2{
-        top: 33%;
-        font-size: 30px;
-    }
-
-    label{
-        font-size: 25px;
-    }
-
-    .Login{
-        top: 20%;
-        height: 60%;
-    }
-
-    input{
-        font-size: 28px;
-    }
-
-    #btnlogin{
-        top: 22vw;
-        width: 80%;
-        height: 8vw;
-        left: 10%;
-        font-size: 22px;
-        background-color: aliceblue;
-    }
-
-    #linkpw{
-        width: 80%;
-        top: 18vw;
-        left: 10%;
-        font-size: 24px;
-    }
-
-    .input-box{
-        top: 14vw;
-        width: 80%;
-        left: 10%;
-    }
-
-    #error{
-        top: 190px;
-        width: 80%;
-        left: 5%;
-        font-size: 24px;
-    }
-}
-
-/* Escritorios Medianos */
-@media (max-width: 1440px) {
-}
-
-/* Escritorios Grandes */
-@media (max-width: 1600px) {
-}
-
-/* Escritorios Muy Grandes */
-@media (max-width: 1920px) {
 }

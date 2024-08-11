@@ -5,17 +5,14 @@
 <link rel="stylesheet" href="css/editar.css">
 <script src="js/baseemployee.js"></script>
 @section('content')
-<div id="basicdata">
-    <h1>Editar Tus Datos</h1>
-    <hr id="div-line">
-</div>
+@section('subtitle', 'Edita Tus Datos')
 <form action="{{ route('my_profile.update', $usuario->id) }}" method="POST" enctype="multipart/form-data">
     @csrf
     {{ method_field('PUT') }}
-    <div id="imagen">
-        <img id="editfoto" src='{{ Storage::url($usuario->photo) }}'>
-        <div class="imagetext">
-            <box-icon type='solid' name='camera-plus'></box-icon>
+    <div class="imagen col-5 mx-auto">
+        <img class="rounded-circle col-12 editfoto" src='{{ Storage::url($usuario->photo) }}'>
+        <div class="imagetext w-100 col">
+            <box-icon type='solid' name='camera-plus' class="mx-auto"></box-icon>
         </div>
     </div>
     <div class="info-box">

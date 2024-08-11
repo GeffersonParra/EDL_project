@@ -21,6 +21,7 @@ Route::middleware('auth', 'verified')->group(function () {
     Route::get('/reports', [ReportController::class, 'show'])->name('reports');
     Route::get('/reports/new', [ReportController::class, 'new'])->name('reports.new');
     Route::post('/reports/new', [ReportController::class, 'generate'])->name('reports.create');
+    Route::get('/prueba', [ReportController::class, 'prueba'])->name('prueba');
 });
 
 Route::get('admin/dashboard', [AdminController::class, 'dashboard'])->middleware(RolMiddleware::class)->name('admin.dashboard');

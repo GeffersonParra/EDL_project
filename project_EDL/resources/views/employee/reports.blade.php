@@ -1,6 +1,5 @@
 @extends('employee.basedashboard')
 @section('title', 'Constancias y Archivos | EDL')
-<base href="/">
 <link rel="stylesheet" href="css/styledashboard.css">
 <link rel="stylesheet" href="css/reportes.css">
 <script src="js/reports.js"></script>

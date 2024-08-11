@@ -17,6 +17,12 @@ class ReportController extends Controller
         return view('employee.reports', compact('usuario'));
     }
 
+    public function prueba(Request $request)
+    {
+        $usuario = request()->user();
+        return view('employee.basedashboard', compact('usuario'));
+    }
+
     public function generate(Request $request)
     {
         $report = new Report();

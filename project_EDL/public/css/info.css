@@ -1,126 +1,28 @@
-#editfoto{
-    height: 35%;
-    width: 21%;
-    position: absolute;
-    top: 17%;
-    left: 39.5%;
-    border-radius: 100%;
-    background-color: white;
+.editfoto{
     text-align: center;
     border: solid, 2px, rgb(0, 0, 0);
     box-shadow: 2px 0px 5px rgb(0, 0, 0);
 }
 
-#uno{
-    position: absolute;
-    top: 52%;
-    left: 28.5%;
-}
-
-#dos{
-    position: absolute;
-    top: 63%;
-    left: 28.5%;
-}
-
-#tres{
-    position: absolute;
-    top: 74%;
-    left: 28.5%;
-}
-
-#cuatro{
-    position: absolute;
-    top: 85%;
-    left: 28.5%;
-}
-
-#cinco{
-    position: absolute;
-    top: 96%;
-    left: 28.5%;
-}
-
-#seis{
-    position: absolute;
-    top: 107%;
-    left: 28.5%;
-}
-
-#siete{
-    position: absolute;
-    top: 52%;
-    left: 62%;
-}
-
-#ocho{
-    position: absolute;
-    top: 63%;
-    left: 62%;
-}
-
-#nueve{
-    position: absolute;
-    top: 74%;
-    left: 62%;
-}
-
-#diez{
-    position: absolute;
-    top: 85%;
-    left: 62%;
-}
-
-#once{
-    position: absolute;
-    top: 96%;
-    left: 62%;
-}
-
-#doce{
-    position: absolute;
-    top: 107%;
-    left: 62%;
-}
-
-#trece{
-    position: absolute;
-    top: 118%;
-    left: 45.5%;
-}
-
-.info-box{
-    position: relative;
-    top: 330px;
-    left: 23%;
-    width: 450px;
-}
-
 .info-box div{
-    position: relative;
-    top: 10px;
-    left: -10%;
-    margin-top: 40px;
     background-color: transparent;
     border: 3px solid white;
-    width: 45%;
-    height: 40px;
+    height: 2.5rem;
     border-radius: 8px;
     color: white;
     box-shadow: 5px 5px rgb(80, 80, 80);
     text-align: left;
     padding-left: 1.8%;
     padding-top: 1%;
+    align-self: center;
+    overflow:visible;
+    margin-bottom: 10%;
 }
 
 .info-box p{
-    position: relative;
-    text-align: left;
-    width: 205px;
-    top: 50px;
-    left: -7.5%;
     color: white;
     font-style: normal;
+    margin-bottom: 1%;
 }
 
 #message-container {
@@ -149,102 +51,13 @@
     width: 60%;
 }
 
-#Editar{
-    position: relative;
-    top: 127%;
-    left: 0%;
+.Editar{
     font-weight: 500;
-    margin-bottom: 85%;
+    margin-bottom: 20%;
     background-color: #1368d8;
     border: none;
     border-radius: 2px;
     height: 40px;
-    width: 60%;
+    width: 80%;
     box-shadow: 5px 5px rgb(80, 80, 80);
-}
-
-@media (max-width: 320px) {
-    .contenedor {
-        width: 100%;
-    }
-}
-
-/* Teléfonos Medianos */
-@media (max-width: 375px) {
-    .contenedor {
-        width: 95%;
-        padding: 15px;
-    }
-}
-
-/* Teléfonos Grandes */
-@media (max-width: 425px) {
-    .contenedor {
-        width: 90%;
-        padding: 20px;
-    }
-}
-
-/* Tablets Pequeñas */
-@media (max-width: 600px) {
-    .contenedor {
-        width: 80%;
-        padding: 20px;
-    }
-}
-
-/* Tablets */
-@media (max-width: 768px) {
-    .contenedor {
-        width: 70%;
-        padding: 20px;
-    }
-}
-
-/* Laptops Pequeñas */
-@media (max-width: 1024px) {
-    .contenedor {
-        width: 60%;
-        padding: 20px;
-    }
-}
-
-/* Laptops Medianas */
-@media (max-width: 1280px) {
-    .contenedor {
-        width: 50%;
-        padding: 20px;
-    }
-}
-
-/* Escritorios Pequeños */
-@media (max-width: 1366px) {
-    .contenedor {
-        width: 45%;
-        padding: 20px;
-    }
-}
-
-/* Escritorios Medianos */
-@media (max-width: 1440px) {
-    .contenedor {
-        width: 40%;
-        padding: 20px;
-    }
-}
-
-/* Escritorios Grandes */
-@media (max-width: 1600px) {
-    .contenedor {
-        width: 35%;
-        padding: 20px;
-    }
-}
-
-/* Escritorios Muy Grandes */
-@media (max-width: 1920px) {
-    .contenedor {
-        width: 30%;
-        padding: 20px;
-    }
 }

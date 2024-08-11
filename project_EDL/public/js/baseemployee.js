@@ -1,19 +1,34 @@
 document.querySelectorAll('.list-item').forEach(item => {
-    item.addEventListener('mouseover', function (event) {
+    item.addEventListener('click', function (event) {
         event.stopPropagation();
-        document.querySelectorAll('.mini-menu').forEach(menu => {
-            menu.style.display = 'none';
-        });
-        const miniMenu = this.querySelector('.mini-menu');
-        if (miniMenu) {
-            miniMenu.style.display = 'block';
-        }
+        handleMenuDisplay.call(this);
+    });
+
+    item.addEventListener('touchstart', function (event) {
+        event.stopPropagation();
+        handleMenuDisplay.call(this);
     });
 });
 
-document.addEventListener('click', function () {
+function handleMenuDisplay() {
     document.querySelectorAll('.mini-menu').forEach(menu => {
         menu.style.display = 'none';
+    });
+    const miniMenu = this.querySelector('.mini-menu');
+    if (miniMenu) {
+        miniMenu.style.display = 'block';
+        setTimeout(() => {
+            miniMenu.classList.add('visible');
+        }, 10);
+    }
+}
+
+document.addEventListener('click', function () {
+    document.querySelectorAll('.mini-menu').forEach(menu => {
+        menu.classList.remove('visible');
+        setTimeout(() => {
+            menu.style.display = 'none';
+        }, 500); 
     });
 });
 
