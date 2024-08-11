@@ -5,10 +5,16 @@
     box-shadow: 2px 0px 5px rgb(0, 0, 0);
 }
 
+.imagen{
+    position: relative;
+    margin-left: 0.5%;
+    width: 25.8%;
+}
+
 .imagetext{
     position: relative;
-    top: -10rem;
-    height: 10%;
+    margin-top: -48%;
+    height:13vw;
     background-color: rgba(0, 0, 0, 0.4);
     color: rgb(255, 255, 255);
     opacity: 0;
@@ -16,6 +22,7 @@
     pointer-events: none;
     border-bottom-left-radius: 1000px;
     border-bottom-right-radius: 1000px;
+    z-index: 10;
 }
 
 .imagetext box-icon{
@@ -27,218 +34,65 @@
     opacity: 1;
 }
 
-#readonly{
-    position: absolute;
-    font-style: normal;
-    top: -25%;
-    left: -40%;
-    border: none;
-    transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.4);
-    color: rgb(255, 255, 255);
-    padding-top: 10px;
+.lock{
+    position:relative;
+    top: -20%;
+    left: 14.5rem;
+    color:white;
+    margin-bottom: 0%;
+    transition: .5s;
     opacity: 0;
-    transition: opacity 0.5s;
-    pointer-events: none;
 }
 
-#readonly2{
-    position: absolute;
-    font-style: normal;
-    top: -50%;
-    left: 520px;
-    border: none;
-    transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.4);
-    color: rgb(255, 255, 255);
-    padding-top: 10px;
-    opacity: 0;
-    transition: opacity 0.5s;
-    pointer-events: none;
-}
-
-#readonly3{
-    position: absolute;
-    font-style: normal;
-    font-weight: 200;
-    top: -50%;
-    left: 155%;
-    width:200px;
-    border: none;
-    transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.4);
-    color: rgb(255, 255, 255);
-    padding-top: 10px;
-    opacity: 0;
-    transition: opacity 0.5s;
-    pointer-events: none;
+.info-box:hover .lock{
+    top: -35%;
+    opacity: 1;
 }
 
 .info-box{
-    position: relative;
-    top: 330px;
-    left: 23%;
-    width: 450px;
-}
-
-.info-box:hover #readonly{
-    opacity: 1;
+    overflow: hidden;
 }
 
 .info-box div{
-    position: relative;
-    top: 10px;
-    left: -10%;
-    margin-top: 40px;
     background-color: transparent;
     border: 3px solid white;
-    width: 45%;
-    height: 40px;
+    height: 2.5rem;
     border-radius: 8px;
     color: white;
     box-shadow: 5px 5px rgb(80, 80, 80);
     text-align: left;
     padding-left: 1.8%;
     padding-top: 1%;
+    align-self: center;
+    overflow:hidden;
+    margin-bottom: 0%;
 }
 
 .info-box input{
-    position: relative;
-    top: 10px;
-    left: -60%;
-    margin-top: 40px;
+    width: 100%;
     background-color: transparent;
     border: 3px solid white;
-    width: 45%;
-    height: 40px;
+    height: 2.5rem;
     border-radius: 8px;
     color: white;
     box-shadow: 5px 5px rgb(80, 80, 80);
     text-align: left;
     padding-left: 1.8%;
     padding-top: 1%;
+    align-self: center;
+    overflow:visible;
+    margin-bottom: 10%;
 }
 
 .info-box label{
-    position: relative;
-    text-align: left;
-    width: 205px;
-    top: -28px;
-    left: -11%;
     color: white;
     font-style: normal;
 }
 
-.info-box2{
-    position: relative;
-    top: -140px;
-    left: 42%;
-    width: 450px;
-}
-
-.info-box2:hover #readonly2{
-    opacity: 1;
-}
-
-.info-box2 div{
-    position: relative;
-    left: 40%;
-    margin-top: 40px;
-    background-color: transparent;
-    border: 3px solid white;
-    width: 45%;
-    height: 40px;
-    border-radius: 8px;
-    color: white;
-    box-shadow: 5px 5px rgb(80, 80, 80);
-    text-align: left;
-    padding-left: 1.8%;
-    padding-top: 1%;
-}
-
-.info-box2 input{
-    position: relative;
-    top: 40%;
-    left: -11%;
-    margin-top: 40px;
-    background-color: transparent;
-    border: 3px solid white;
-    width: 45%;
-    height: 40px;
-    border-radius: 8px;
-    color: white;
-    box-shadow: 5px 5px rgb(80, 80, 80);
-    text-align: left;
-    padding-left: 1.8%;
-    padding-top: 1%;
-}
-
-.info-box2 label{
-    position: relative;
-    text-align: left;
-    width: 205px;
-    top: -35px;
-    left: 38%;
+.info-box p{
     color: white;
     font-style: normal;
-}
-
-
-.info-box3{
-    position: relative;
-    top: -9vw;
-    left: 40%;
-    right: 40%;
-    width: 20%;
-}
-
-.info-box3:hover #readonly3{
-    opacity: 1;
-}
-
-.info-box3 div{
-    position: relative;
-    margin-top: 40px;
-    background-color: transparent;
-    border: 3px solid white;
-    height: 40px;
-    border-radius: 8px;
-    color: white;
-    box-shadow: 5px 5px rgb(80, 80, 80);
-    text-align: left;
-    padding-left: 1.8%;
-    padding-top: 1%;
-    font-weight: 700;
-}
-
-.text{
-    position: absolute;
-    text-align: left;
-    width: 205px;
-    top: -38%;
-    left: -7.5%;
-    color: white;
-    font-style: normal;
-}
-
-.text2{
-    position: absolute;
-    text-align: left;
-    width: 205px;
-    top: -60%;
-    left: 42.5%;
-    color: white;
-    font-style: normal;
-}
-
-.text3{
-    position: absolute;
-    text-align: left;
-    width: 205px;
-    top: -60%;
-    left: 6.5%;
-    color: white;
-    font-style: normal;
+    margin-bottom: 1%;
 }
 
 #option{
@@ -248,110 +102,21 @@
 }
 
 #Editar{
-    position: relative;
     font-weight: 500;
     background-color: #1368d8;
     border: none;
     border-radius: 2px;
     height: 40px;
-    width: 30%;
+    width: 80%;
     box-shadow: 5px 5px rgb(80, 80, 80);
-    margin-left: 50px;
 }
 
 #Cancelar{
-    position: relative;
     font-weight: 500;
     background-color: #6d6d6d;
     border: none;
     border-radius: 2px;
     height: 40px;
-    width: 30%;
+    width: 80%;
     box-shadow: 5px 5px rgb(80, 80, 80);
-}
-
-@media (max-width: 320px) {
-    .contenedor {
-        width: 100%;
-    }
-}
-
-/* Teléfonos Medianos */
-@media (max-width: 375px) {
-    .contenedor {
-        width: 95%;
-        padding: 15px;
-    }
-}
-
-/* Teléfonos Grandes */
-@media (max-width: 425px) {
-    .contenedor {
-        width: 90%;
-        padding: 20px;
-    }
-}
-
-/* Tablets Pequeñas */
-@media (max-width: 600px) {
-    .contenedor {
-        width: 80%;
-        padding: 20px;
-    }
-}
-
-/* Tablets */
-@media (max-width: 768px) {
-    .contenedor {
-        width: 70%;
-        padding: 20px;
-    }
-}
-
-/* Laptops Pequeñas */
-@media (max-width: 1024px) {
-    .contenedor {
-        width: 60%;
-        padding: 20px;
-    }
-}
-
-/* Laptops Medianas */
-@media (max-width: 1280px) {
-    .contenedor {
-        width: 50%;
-        padding: 20px;
-    }
-}
-
-/* Escritorios Pequeños */
-@media (max-width: 1366px) {
-    .contenedor {
-        width: 45%;
-        padding: 20px;
-    }
-}
-
-/* Escritorios Medianos */
-@media (max-width: 1440px) {
-    .contenedor {
-        width: 40%;
-        padding: 20px;
-    }
-}
-
-/* Escritorios Grandes */
-@media (max-width: 1600px) {
-    .contenedor {
-        width: 35%;
-        padding: 20px;
-    }
-}
-
-/* Escritorios Muy Grandes */
-@media (max-width: 1920px) {
-    .contenedor {
-        width: 30%;
-        padding: 20px;
-    }
 }

@@ -53,13 +53,13 @@
             </li>
 
         </ul>
-        <form id="logout-form justify-content-end" action="{{ route('logout') }}" method="POST" style="display: none;">
-            @csrf
-        </form>
         <button class="logout justify-content-end"
             onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
             Cerrar sesión
         </button>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            @csrf
+        </form>
     </div>
     <div class="content col-12 mx-auto">
         <h1 class="mt-4 fs-1">@yield('subtitle')</h1>

@@ -6,82 +6,103 @@
 <script src="js/baseemployee.js"></script>
 @section('content')
 @section('subtitle', 'Edita Tus Datos')
-<form action="{{ route('my_profile.update', $usuario->id) }}" method="POST" enctype="multipart/form-data">
+<form action="{{ route('my_profile.update', $usuario->id) }}" method="POST" enctype="multipart/form-data" class="w-100">
     @csrf
     {{ method_field('PUT') }}
-    <div class="imagen col-5 mx-auto">
-        <img class="rounded-circle col-12 editfoto" src='{{ Storage::url($usuario->photo) }}'>
-        <div class="imagetext w-100 col">
-            <box-icon type='solid' name='camera-plus' class="mx-auto"></box-icon>
+    <div class="imagen col-4 mx-auto" id="imagen">
+        <img class="rounded-circle col-12 editfoto" id="editfoto" src='{{ Storage::url($usuario->photo) }}'>
+        <div class="imagetext d-flex">
+            <box-icon type='solid' name='camera-plus' class="mx-auto my-auto"></box-icon>
         </div>
     </div>
-    <div class="info-box">
-        <p class="text">Nombres: </p>
-        <div>{{$usuario->name}}</div>
-        <div id="readonly">No puedes modificar esto.</div>
-    </div>
-    <div class="info-box">
-        <p class="text">Apellidos: </p>
-        <div>{{$usuario->lastname}}</div>
-        <div id="readonly">No puedes modificar esto.</div>
-    </div>
-    <div class="info-box">
-        <p class="text">Tipo De Identificación: </p>
-        <div>{{$usuario->idtype}}</div>
-        <div id="readonly">No puedes modificar esto.</div>
-    </div>
-    <div class="info-box">
-        <p class="text"># Documento: </p>
-        <div>{{$usuario->id}}</div>
-        <div id="readonly">No puedes modificar esto.</div>
-    </div>
-    <div class="info-box">
-        <p class="text">Fecha de Nacimiento: </p>
-        <div>{{$usuario->birth}}</div>
-        <div id="readonly">No puedes modificar esto.</div>
-    </div>
-    <div class="info-box">
-        <label for="telephone">Teléfono: </label>
-        <input type="tel" name="telephone" min="3000000000" max="3800000000" step="0.01" id="telephone"
-            value="{{$usuario->telephone}}" required>
-    </div>
-    <div class="info-box2">
-        <label for="address">Dirección: </label>
-        <input type="text" name="address" id="address" value="{{$usuario->address}}" required>
-    </div>
-    <div class="info-box2">
-        <p class="text2">Fecha de Entrada: </p>
-        <div>{{$usuario->inday}}</div>
-        <div id="readonly2">No puedes modificar esto.</div>
-    </div>
-    <div class="info-box2">
-        <p class="text2">Fecha de Salida: </p>
-        <div>{{$usuario->outday}}</div>
-        <div id="readonly2">No puedes modificar esto.</div>
-    </div>
-    <div class="info-box2">
-        <label for="actualproject">Proyecto Actual: </label>
-        <input type="text" name="actualproject" id="actualproject" value="{{$usuario->actualproject}}" required>
-    </div>
-    <div class="info-box2">
-        <p class="text2">Cargo: </p>
-        <div>{{$usuario->occupation}}</div>
-        <div id="readonly2">No puedes modificar esto.</div>
-    </div>
-    <div class="info-box2">
-        <label for="email">E-mail: </label>
-        <input type="email" name="email" id="email" value="{{$usuario->email}}" required>
-    </div>
-    <div class="info-box3">
-        <p class="text3">Estado: </p>
-        <div>{{$usuario->status}}</div>
-        <div id="readonly3">No puedes modificar esto.</div>
-    </div>
-    <div id="option">
-        <a href="{{ route( 'my_profile' ) }}"><button type="submit" id="Cancelar">Cancelar</button></a>
-        <a href="{{ route( 'my_profile.edit' ) }}"><button type="submit" id="Editar">Guardar</button></a>
-    </div>
-    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
-    <input type="file" id="photo" name="photo" style="display: none;" accept="image/*">
+    <div class="container">
+        <div class="container self-center w-50 mt-5">
+            <div class="row mx-auto">
+                <div class="info-box col-12 col-md-6">
+                    <p class="text">Nombres: </p>
+                    <div>{{$usuario->name}}</div>
+                    <box-icon name='lock-alt' type='solid' color='#ffffff' class="lock"></box-icon>
+                </div>
+                <div class="info-box col-12 col-md-6 mt-1">
+                    <label for="address">Dirección: </label>
+                    <input type="text" name="address" id="address" value="{{$usuario->address}}" required>
+                </div>
+            </div>
+            <div class="row mx-auto">
+                <div class="info-box col-12 col-md-6">
+                    <p class="text">Apellidos: </p>
+                    <div>{{$usuario->lastname}}</div>
+                    <box-icon name='lock-alt' type='solid' color='#ffffff' class="lock"></box-icon>
+                </div>
+                <div class="info-box col-12 col-md-6">
+                    <p class="text">Fecha de Nacimiento: </p>
+                    <div>{{$usuario->birth}}</div>
+                    <box-icon name='lock-alt' type='solid' color='#ffffff' class="lock"></box-icon>
+                </div>
+            </div>
+            <div class="row mx-auto">
+                <div class="info-box col-12 col-md-6">
+                    <p class="text"># Documento: </p>
+                    <div>{{$usuario->id}}</div>
+                    <box-icon name='lock-alt' type='solid' color='#ffffff' class="lock"></box-icon>
+                </div>
+                <div class="info-box col-12 col-md-6">
+                    <p class="text">Tipo De Identificación: </p>
+                    <div>{{$usuario->idtype}}</div>
+                    <box-icon name='lock-alt' type='solid' color='#ffffff' class="lock"></box-icon>
+                </div>
+            </div>
+            <div class="row mx-auto">
+                <div class="info-box col-12 col-md-6">
+                    <p class="text">Fecha de Entrada: </p>
+                    <div>{{$usuario->inday}}</div>
+                    <box-icon name='lock-alt' type='solid' color='#ffffff' class="lock"></box-icon>
+                </div>
+                <div class="info-box col-12 col-md-6">
+                    <p class="text">Fecha de Salida: </p>
+                    <div>{{$usuario->outday}}</div>
+                    <box-icon name='lock-alt' type='solid' color='#ffffff' class="lock"></box-icon>
+                </div>
+            </div>
+            <div class="row mx-auto">
+                <div class="info-box col-12 col-md-6">
+                    <label for="telephone">Teléfono: </label>
+                    <input type="tel" name="telephone" min="3000000000" max="3800000000" step="0.01" id="telephone"
+                        value="{{$usuario->telephone}}" required>
+                </div>
+                <div class="info-box col-12 col-md-6">
+                    <label for="email">E-mail: </label>
+                    <input type="email" name="email" id="email" value="{{$usuario->email}}" required>
+                </div>
+            </div>
+            <div class="row mx-auto">
+                <div class="info-box col-12 col-md-6">
+                    <p class="text">Cargo: </p>
+                    <div>{{$usuario->occupation}}</div>
+                    <box-icon name='lock-alt' type='solid' color='#ffffff' class="lock"></box-icon>
+                </div>
+                <div class="info-box col-12 col-md-6 mt-1">
+                    <label for="actualproject">Proyecto Actual: </label>
+                    <input type="text" name="actualproject" id="actualproject" value="{{$usuario->actualproject}}"
+                        required>
+                </div>
+            </div>
+            <div class="row mx-auto">
+                <div class="info-box col-12 col-md-6 col">
+                    <p class="text">Estado: </p>
+                    <div>{{$usuario->status}}</div>
+                    <box-icon name='lock-alt' type='solid' color='#ffffff' class="lock"></box-icon>
+                </div>
+            </div>
+            <div class="row mx-auto mt-5">
+                <div class="col">
+                    <a href="{{ route( 'my_profile' ) }}"><button type="submit" id="Cancelar">Cancelar</button></a>
+                </div>
+                <div class="col-6">
+                    <a href="{{ route( 'my_profile.edit' ) }}"><button type="submit" id="Editar">Guardar</button></a>
+                </div>
+            </div>
+            <input type="file" id="photo" name="photo" style="display: none;" accept="image/*">
 </form>
+<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 @endsection
