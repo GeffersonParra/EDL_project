@@ -1,7 +1,15 @@
 .editfoto{
+    background-color: white;
     text-align: center;
     border: solid, 2px, rgb(0, 0, 0);
     box-shadow: 2px 0px 5px rgb(0, 0, 0);
+    height: 25rem;  
+}
+
+.imagen{
+    position: relative;
+    margin-left: 0.5%;
+    width: 25.8%;
 }
 
 .info-box div{
@@ -60,4 +68,10 @@
     height: 40px;
     width: 80%;
     box-shadow: 5px 5px rgb(80, 80, 80);
+}
+
+@media(max-width: 1000px) {
+    .editfoto{
+    height: 6rem;
+    }
 }

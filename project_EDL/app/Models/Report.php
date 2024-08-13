@@ -14,5 +14,6 @@ class Report extends Model
         'id_employee',
         'type',
         'created',
+        'document',
     ];
 }

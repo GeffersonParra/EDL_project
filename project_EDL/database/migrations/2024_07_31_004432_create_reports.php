@@ -12,6 +12,7 @@ return new class extends Migration
             $table->id();
             $table->string('id_employee');
             $table->integer('type');
+            $table->string('document')->nullable();
             $table->timestamps();
         });
     }

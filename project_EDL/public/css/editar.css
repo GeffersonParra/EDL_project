@@ -3,6 +3,7 @@
     text-align: center;
     border: solid, 2px, rgb(0, 0, 0);
     box-shadow: 2px 0px 5px rgb(0, 0, 0);
+    height: 25rem;
 }
 
 .imagen{
@@ -30,14 +31,24 @@
     height: 70%;
 }
 
-.imagen:hover .imagetext {
+.imagen:hover .imagetext{
     opacity: 1;
 }
 
 .lock{
     position:relative;
     top: -20%;
-    left: 14.5rem;
+    left: 89%;
+    color:white;
+    margin-bottom: 0%;
+    transition: .5s;
+    opacity: 0;
+}
+
+#lock{
+    position:relative;
+    top: -1rem;
+    left: 89%;
     color:white;
     margin-bottom: 0%;
     transition: .5s;
@@ -46,6 +57,11 @@
 
 .info-box:hover .lock{
     top: -35%;
+    opacity: 1;
+}
+
+.info-box:hover #lock{
+    top: -2rem;
     opacity: 1;
 }
 
@@ -82,6 +98,7 @@
     align-self: center;
     overflow:visible;
     margin-bottom: 10%;
+    transition: 1s;
 }
 
 .info-box label{
@@ -95,6 +112,12 @@
     margin-bottom: 1%;
 }
 
+.info-box input:focus,
+.info-box input:valid{
+    outline-color: #ffe600;
+    outline-width: 100%;
+}
+
 #option{
     position: absolute;
     bottom: 5%;
@@ -106,9 +129,8 @@
     background-color: #1368d8;
     border: none;
     border-radius: 2px;
-    height: 40px;
-    width: 80%;
     box-shadow: 5px 5px rgb(80, 80, 80);
+    height: 2.5rem;
 }
 
 #Cancelar{
@@ -116,7 +138,27 @@
     background-color: #6d6d6d;
     border: none;
     border-radius: 2px;
-    height: 40px;
-    width: 80%;
     box-shadow: 5px 5px rgb(80, 80, 80);
+    height: 2.5rem;
+}
+
+@media(max-width: 1000px) {
+    .editfoto{
+    height: 6rem;
+    }
+
+    #Editar{
+        margin-top: 2rem;
+    }
+
+    .lock{
+        top: 1rem;
+        background-color: rgb(29, 29, 29);
+        left: 70%;
+    }
+    
+    #lock{
+        left: 75%;
+        background-color: rgb(29, 29, 29);
+    }
 }

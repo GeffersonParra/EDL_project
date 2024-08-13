@@ -45,6 +45,12 @@ return [
         ],
 
 
+        'docs' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/docs'),
+            'url' => env('APP_URL') . '/storage',
+            'visibility' => 'public',
+        ],
 
 
         's3' => [

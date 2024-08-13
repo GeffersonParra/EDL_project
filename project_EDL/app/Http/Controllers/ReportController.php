@@ -7,6 +7,7 @@ use App\Models\Report;
 use Barryvdh\DomPDF\Facade as PDF;
 use Barryvdh\DomPDF\Facade\Pdf as FacadePdf;
 use Barryvdh\DomPDF\PDF as DomPDFPDF;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 
 class ReportController extends Controller
@@ -28,12 +29,15 @@ class ReportController extends Controller
         $report = new Report();
         $usuario = $request->user();
         $report->id_employee = $usuario->id;
-
         if ($request->input("action") == "trabajo") {
             $report->type = 1;
+            $report->document = ("docs/Trabajo-".$usuario->id.'_'.date('Y-m-d').'.pdf');
             $report->save();
-            $pdf = FacadePdf::loadView("employee.pdf.trabajo", compact('usuario', 'report'));
-            return $pdf->download('Constancia_Trabajo_EDL.pdf');
+            $fileName = 'Trabajo-'. $usuario->id . '_' . date('Y-m-d') . '.pdf';
+            $pdf = FacadePdf::loadView('employee.pdf.trabajo', compact('usuario', 'report'));
+            Storage::disk('docs')->put($fileName, $pdf->output());
+            return $pdf->stream();
+            
         } else if ($request->input("action") == "salida") {
             $report->type = 2;
             $report->save();

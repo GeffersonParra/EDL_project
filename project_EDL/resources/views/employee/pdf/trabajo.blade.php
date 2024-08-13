@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Constancia_Trabajo_EDL</title>
+    <title>Constancia De Trabajo</title>
     <style>
         body {
             font-family: Arial, sans-serif;

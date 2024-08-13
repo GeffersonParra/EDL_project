@@ -10,7 +10,7 @@
     @csrf
     {{ method_field('PUT') }}
     <div class="imagen col-4 mx-auto" id="imagen">
-        <img class="rounded-circle col-12 editfoto" id="editfoto" src='{{ Storage::url($usuario->photo) }}'>
+        <img class="rounded-circle w-100 editfoto" id="editfoto" src='{{ Storage::url($usuario->photo) }}'>
         <div class="imagetext d-flex">
             <box-icon type='solid' name='camera-plus' class="mx-auto my-auto"></box-icon>
         </div>
@@ -88,19 +88,15 @@
                 </div>
             </div>
             <div class="row mx-auto">
-                <div class="info-box col-12 col-md-6 col">
+                <div class="info-box col-12 col-md-6 align-self-center mx-auto">
                     <p class="text">Estado: </p>
                     <div>{{$usuario->status}}</div>
-                    <box-icon name='lock-alt' type='solid' color='#ffffff' class="lock"></box-icon>
+                    <box-icon name='lock-alt' type='solid' color='#ffffff' id="lock"></box-icon>
                 </div>
             </div>
-            <div class="row mx-auto mt-5">
-                <div class="col">
-                    <a href="{{ route( 'my_profile' ) }}"><button type="submit" id="Cancelar">Cancelar</button></a>
-                </div>
-                <div class="col-6">
-                    <a href="{{ route( 'my_profile.edit' ) }}"><button type="submit" id="Editar">Guardar</button></a>
-                </div>
+            <div class="row mt-5 col col-sm-12 col-lg-12 col-xl-12 mx-auto">
+                <a href="{{ route( 'my_profile.edit' ) }}"><button type="submit" class="mx-auto col-12" id="Editar">Guardar</button></a>
+                <a href="{{ route( 'my_profile' ) }}"><button type="submit" class="mx-auto col-12 mt-3 mb-5" id="Cancelar">Cancelar</button></a>
             </div>
             <input type="file" id="photo" name="photo" style="display: none;" accept="image/*">
 </form>

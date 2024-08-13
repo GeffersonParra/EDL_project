@@ -65,6 +65,12 @@ html, body {
     transition: .5s;
 }
 
+.input-box input:focus,
+.input-box input:valid{
+    outline-color: #ffe600;
+    outline-width: 10%;
+}
+
 #usr{
     font-size: 1rem;
     position: absolute;
