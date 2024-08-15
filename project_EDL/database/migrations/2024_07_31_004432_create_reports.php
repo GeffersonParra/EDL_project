@@ -10,6 +10,7 @@ return new class extends Migration
     {
         Schema::create('reports', function (Blueprint $table) {
             $table->id();
+            $table->string('doc_name');
             $table->string('id_employee');
             $table->integer('type');
             $table->string('document')->nullable();

@@ -5,6 +5,11 @@
 @section('subtitle', 'Constancias Y Archivos')
 @section('content')
 <div class="container col-12">
+    @if ($reports->isEmpty())
+    <div class="col-12 text-center">
+        <h1 class="mx-auto">No tienes reportes creados, aún...</h1>
+    </div>
+    @else
     <table class="table table-dark w-75 mx-auto text-center">
         <tr>
             <th>
@@ -20,24 +25,36 @@
                 Acciones
             </th>
         </tr>
+        @foreach($reports as $report)
         <tr>
             <td>
-                Nombre
+                {{ $report->doc_name }}
             </td>
             <td>
-                Fecha De Creación
+                {{ $report->created_at }}
             </td>
             <td>
-                Tipo
+                @if($report->type == 1)
+                <p>Constancia de Trabajo</p>
+                @else
+                <p>Error!</p>
+                @endif
             </td>
             <td>
-                <button>Ver</button>
-                <button>Descargar</button>
+                <a href="{{ asset('storage/' . $report->document) }}" target="_blank">
+                    <button>Ver</button>
+                </a>
+                <a href="{{ route('reports.download', $report->doc_name)}}">
+                    <button>Descargar</button>
+                </a>
+                
                 <button>Eliminar</button>
             </td>
         </tr>
+        @endforeach
     </table>
 </div>
+@endif
 <div id="reportform">
     <form action="{{ route('reports.create') }}" method="POST">
         @csrf

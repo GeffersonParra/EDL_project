@@ -15,13 +15,8 @@ class ReportController extends Controller
     public function show(Request $request)
     {
         $usuario = request()->user();
-        return view('employee.reports', compact('usuario'));
-    }
-
-    public function prueba(Request $request)
-    {
-        $usuario = request()->user();
-        return view('employee.basedashboard', compact('usuario'));
+        $reports = Report::where('id_employee', $usuario->id)->get();
+        return view('employee.reports', compact('usuario', 'reports'));
     }
 
     public function generate(Request $request)
@@ -31,12 +26,22 @@ class ReportController extends Controller
         $report->id_employee = $usuario->id;
         if ($request->input("action") == "trabajo") {
             $report->type = 1;
-            $report->document = ("docs/Trabajo-".$usuario->id.'_'.date('Y-m-d').'.pdf');
-            $report->save();
+            $report_delete = Report::where('id_employee', $usuario->id)->where('type', 1)->first();
+            if($report_delete){
+                $ruta_report = $report_delete->document;
+                if(Storage::disk('docs')->exists($ruta_report)){
+                    Storage::disk('docs')->delete($ruta_report);
+                }
+                $report_delete->delete();
+            }
             $fileName = 'Trabajo-'. $usuario->id . '_' . date('Y-m-d') . '.pdf';
+            $report->document = ("docs/Trabajo-".$usuario->id.'_'.date('Y-m-d').'.pdf');
+            $report->doc_name = $fileName;
+            $report->save();
             $pdf = FacadePdf::loadView('employee.pdf.trabajo', compact('usuario', 'report'));
             Storage::disk('docs')->put($fileName, $pdf->output());
             return $pdf->stream();
+            return view('employee.reports', compact('usuario', 'reports'));
             
         } else if ($request->input("action") == "salida") {
             $report->type = 2;
@@ -46,4 +51,10 @@ class ReportController extends Controller
         }
         return redirect()->route("reports");
     }
+
+    public function download($name)
+{
+    $report = Report::where('doc_name', $name)->first();
+    return $report->download();
+}
 }
