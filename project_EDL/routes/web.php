@@ -21,7 +21,8 @@ Route::middleware('auth', 'verified')->group(function () {
     Route::get('/reports', [ReportController::class, 'show'])->name('reports');
     Route::get('/reports/new', [ReportController::class, 'new'])->name('reports.new');
     Route::post('/reports/new', [ReportController::class, 'generate'])->name('reports.create');
-    Route::get('/reports/download/{name}', [ReportController:: class, 'download'])->name('reports.download');
+    Route::get('/reports/download/{name}', [ReportController:: class, 'download_pdf'])->name('reports.download');
+    Route::delete('/reports/delete/{id}', [ReportController:: class, 'delete'])->name('reports.delete');
 });
 
 Route::get('admin/dashboard', [AdminController::class, 'dashboard'])->middleware(RolMiddleware::class)->name('admin.dashboard');

@@ -10,7 +10,7 @@
         <h1 class="mx-auto">No tienes reportes creados, aún...</h1>
     </div>
     @else
-    <table class="table table-dark w-75 mx-auto text-center">
+    <table class="table table-dark w-75 mx-auto text-center col-sm-1">
         <tr>
             <th>
                 Nombre
@@ -47,8 +47,12 @@
                 <a href="{{ route('reports.download', $report->doc_name)}}">
                     <button>Descargar</button>
                 </a>
-                
-                <button>Eliminar</button>
+                <form action="{{ route('reports.delete', $report->id)}}" method="POST">
+                    @csrf
+                    {{ method_field('DELETE') }}
+                    <button type="submit" onclick="return confirm('En realidad quieres eliminar esta constancia?')"
+                        class="eliminar">Borrar</button>
+                </form>
             </td>
         </tr>
         @endforeach
@@ -61,8 +65,8 @@
         <button id="in" name="action" value="trabajo">Constancia de trabajo</button>
     </form>
 </div>
-<button id="Nuevo">Nueva Constancia</button>
-<a href="{{ route( 'reports.new' ) }}"><button id="Nuevo">Nueva Constancia</button></a>
-</form>
+<div class="col-xl-6 col-lg-6 col-md-8 col-sm-12 mx-auto" id="btn">
+    <button class="Nuevo col-12 mx-auto">Nueva Constancia</button>
+</div>
 <script src="js/reports.js"></script>
 @endsection

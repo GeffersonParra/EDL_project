@@ -165,12 +165,12 @@ hr{
     body{
         display: flex;
         flex-direction: column;
-        height: 90rem;
+        height: 60rem;
     }
 
     .vertical-nav{
         flex-direction: column;
-        height: 4%;
+        height: 6%;
         width: 100%;
         justify-items: center;
     }

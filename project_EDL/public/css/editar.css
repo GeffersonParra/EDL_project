@@ -3,7 +3,7 @@
     text-align: center;
     border: solid, 2px, rgb(0, 0, 0);
     box-shadow: 2px 0px 5px rgb(0, 0, 0);
-    height: 25rem;
+    height: 30%;
 }
 
 .imagen{
@@ -144,7 +144,7 @@
 
 @media(max-width: 1000px) {
     .editfoto{
-    height: 6rem;
+    height: 8rem;
     }
 
     #Editar{
