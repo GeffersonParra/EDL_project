@@ -5980,14 +5980,14 @@ fieldset:disabled .btn {
     height: 100%;
     overflow-x: hidden;
     overflow-y: auto;
-    outline: 0
+    outline: 0;
 }
 
 .modal-dialog {
     position: relative;
     width: auto;
     margin: .5rem;
-    pointer-events: none
+    pointer-events: none;
 }
 
 .modal.fade .modal-dialog {

@@ -43,9 +43,21 @@ class ReportController extends Controller
             return redirect()->route('reports');
         } else if ($request->input("action") == "salida") {
             $report->type = 2;
+            $report_delete = Report::where('id_employee', $usuario->id)->where('type', 2)->first();
+            if ($report_delete) {
+                $ruta_report = $report_delete->document;
+                if (Storage::disk('docs')->exists($ruta_report)) {
+                    Storage::disk('docs')->delete($ruta_report);
+                }
+                $report_delete->delete();
+            }
+            $fileName = 'Salida-' . $usuario->id . '_' . date('Y-m-d') . '.pdf';
+            $report->document = ("docs/Salida-" . $usuario->id . '_' . date('Y-m-d') . '.pdf');
+            $report->doc_name = $fileName;
             $report->save();
-            $pdf = FacadePdf::loadView("employee.pdf.salida", compact('usuario', 'report'));
-            return $pdf->stream('Constancia_Salida_EDL.pdf');
+            $pdf = FacadePdf::loadView('employee.pdf.salida', compact('usuario', 'report'));
+            Storage::disk('docs')->put($fileName, $pdf->output());
+            return redirect()->route('reports');
         }
         return redirect()->route("reports");
     }
