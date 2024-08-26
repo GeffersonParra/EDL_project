@@ -65,7 +65,7 @@
         }
 
         #text{
-            font-size: 20;
+            font-size: 18;
         }
 
         #finaltext{
@@ -87,40 +87,20 @@
     <img src="{{ public_path('images/logo_prueba.jpg') }}" id="icon">
     <hr>
     <div id="container">
-        <h1 id="constancia"><u>Constancia de Trabajo</u></h1>
+        <h1 id="constancia"><u>Constancia de Salida</u></h1>
         <br>
         <h3 id="responsable"><i>Pepito Pérez</i></h3>
         <h2 id="cargo-responsable">Gerente General</h2>
         <br>
         <h3 id="constar">Hace Constar:</h3>
-        <p id="text">Que {{ $usuario->name }} {{ $usuario->lastname }} identificado con {{ $usuario->idtype }} N°{{ $usuario->id }}, se encuentra laborando en la empresa EDL S.A.S con Nit 111111 desde el {{ $usuario->inday }} como {{ $usuario->occupation }} desempeñándose siempre con eficiencia, responsabilidad y honestidad.</p>
-        <p id="text">Se expide la presente constancia a solicitud del interesado para los fines que estime por conveniente.</p>
+        <p id="text">Que {{ $usuario->name }} {{ $usuario->lastname }} identificado con {{ $usuario->idtype }} N°{{ $usuario->id }}, ha laborado en nuestra empresa EDL S.A.S con Nit 111111 desde el {{ $usuario->inday }} hasta {{ $usuario->outday }}.</p>
+        <p id="text">Durante su tiempo con nosotros, el/la Sr./Sra. {{ $usuario->name }} desempeñó el cargo de {{ $usuario->occupation }} con responsabilidad y dedicación habiendo cumplido con los procedimientos correspondientes según lo estipulado en la normativa interna de la empresa.</p>
+        <p id="text">Se expide la presente constancia a solicitud del interesado para los fines que este estime por conveniente.</p>
         <p id="finaltext">Bogotá D.C, {{ $report->created_at->format('Y-m-d') }}</p>
     </div>
     <hr>
     <div id="footer">
         <p>EDL | Dirección: Cra Callefalsa #ejemplo-ejemplo | Email: edl@ingenieros.com </p>
-        <!--[Nombre de la Empresa]
-        [Dirección de la Empresa]
-        [Ciudad, Estado, Código Postal]
-        
-        [Fecha]
-        
-        A quien corresponda:
-        
-        Por medio de la presente, hacemos constar que el/la Sr./Sra. [Nombre del Empleado], con identificación número [Número de Identificación], ha laborado en nuestra empresa [Nombre de la Empresa] desde el [Fecha de Inicio] hasta el [Fecha de Terminación].
-        
-        Durante su tiempo con nosotros, el/la Sr./Sra. [Nombre del Empleado] desempeñó el cargo de [Puesto Ocupado] con responsabilidad y dedicación. Su salida se realizó de manera voluntaria [o] por [motivo si es aplicable], habiendo cumplido con los procedimientos correspondientes según lo estipulado en la normativa interna de la empresa.
-        
-        Expedimos esta constancia a solicitud del interesado para los fines que estime convenientes.
-        
-        Atentamente,
-        
-        [Firma]
-        
-        [Nombre del Responsable]
-        [Puesto del Responsable]
-        [Nombre de la Empresa]-->
     </div>
 </body>
 </html>
