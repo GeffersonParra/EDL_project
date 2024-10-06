@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/styledashboard.css">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/admin/styledashboard.css') }}">
     <title>@yield('title')</title>
 </head>
 
@@ -66,7 +66,7 @@
         <hr>
         @yield('content')
     </div>
-    <script src="js/base.js"></script>
+    <script src="{{ asset('js/base.js') }}"></script>
 </body>
 
 </html>

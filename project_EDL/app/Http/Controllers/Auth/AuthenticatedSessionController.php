@@ -12,27 +12,24 @@ use App\Models\User;
 
 class AuthenticatedSessionController extends Controller
 {
-    /**
-     * Display the login view.
-     */
     public function create(): View
     {
         return view('auth.login');
     }
 
-    /**
-     * Handle an incoming authentication request.
-     */
     public function store(LoginRequest $request)
     {
         $request->authenticate();
+        $usuario = $request->user();
         $request->session()->regenerate();
-        return redirect('/dashboard');
+        if($usuario->role === 1){
+            return redirect()->route('admin.dashboard');
+        }
+        else{
+            return redirect('/dashboard');
+        }
     }
 
-    /**
-     * Destroy an authenticated session.
-     */
     public function destroy(Request $request): RedirectResponse
     {
         Auth::guard('web')->logout();

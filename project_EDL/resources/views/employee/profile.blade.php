@@ -6,9 +6,9 @@
 @section('content')
 @section('subtitle', 'Tus Datos Básicos')
 <div class="imagen col-4 mx-auto">
-<img class="rounded-circle w-100 editfoto" src='{{ Storage::url($usuario->photo) }}'>
+    <img class="rounded-circle w-100 editfoto" src='{{ Storage::url($usuario->photo) }}'>
 </div>
-<div class="container w-50 h-100 mt-5 self-center">
+<div class="container w-50 h-100 mt-1 self-center">
     <div class="row mx-auto">
         <div class="info-box col-12 col-md-6">
             <p class="text">Nombres: </p>

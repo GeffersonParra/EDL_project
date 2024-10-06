@@ -7,5 +7,8 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
-    //
+    public function dashboard(Request $request){
+        $usuario = $request->user();
+        return view('admin.dashboard', compact('usuario'));
+    }
 }

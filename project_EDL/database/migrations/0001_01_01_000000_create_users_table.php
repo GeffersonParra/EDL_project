@@ -28,6 +28,7 @@ return new class extends Migration
             $table->string('status')->default('CONTRATADO');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->boolean('role')->default(false);
             $table->rememberToken();
             $table->timestamps();
         });
@@ -49,9 +50,6 @@ return new class extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
         Schema::dropIfExists('users');

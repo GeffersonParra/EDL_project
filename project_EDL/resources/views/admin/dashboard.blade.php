@@ -1,12 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <p>Estás en la vista de administrador</p>
-</body>
-</html>
+@extends('admin.basedashboard')
+<link rel="stylesheet" href="css/styledashboard.css">
+@section('title', 'Administrador | EDL')
+@section('content')
+@php
+$name = $usuario->name;
+@endphp
+@section('subtitle', "Bienvenid@, $name")
+<div class="container">
+    <h3 class="paragraph col-10 mx-auto text-center">Desde este portal, puedes acceder a toda tu información personal, así como generar constancias
+        y estar al tanto de los proyectos dentro de la compañía.</h3>
+</div>
+</div>
+@endsection

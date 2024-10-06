@@ -3,7 +3,7 @@
 <base href="/">
 <link rel="stylesheet" href="css/styledashboard.css">
 <link rel="stylesheet" href="css/editar.css">
-<script src="js/baseemployee.js"></script>
+<script src="js/base.js"></script>
 @section('content')
 @section('subtitle', 'Edita Tus Datos')
 <form action="{{ route('my_profile.update', $usuario->id) }}" method="POST" enctype="multipart/form-data" class="w-100">
