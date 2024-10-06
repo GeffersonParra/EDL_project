@@ -16,7 +16,9 @@
         </a>
         <img class="foto h-25 rounded-circle col-8" src='{{ Storage::url($usuario->photo) }}'>
         <h6 class="nombre mt-3">{{ $usuario->name }}</h6>
-        <h6 class="cargo">{{ $usuario->occupation }}</h6>
+        <h6 class="cargo">{{ $usuario->occupation }} <div class="admin rounded-pill text-center mx-auto mt-2" style="">
+                Admin</div>
+        </h6>
         <ul class="opciones d-flex">
             <a href="#" id="encabezado">
                 <li class="list-item">Mi Perfil
@@ -28,7 +30,16 @@
                     </a>
                 </ul>
             </div>
-            </li>
+            <a href="#" id="encabezado">
+                <li class="list-item">Empleados
+            </a>
+            <div class="mini-menu">
+                <ul>
+                    <a href="my_profile">
+                        <li>Consultar lista de empleados</li>
+                    </a>
+                </ul>
+            </div>
             <a href="#" id="encabezado">
                 <li class="list-item">Constancias
             </a>
@@ -39,7 +50,6 @@
                     </a>
                 </ul>
             </div>
-            </li>
             <a href="#" id="encabezado">
                 <li class="list-item">Proyectos
             </a>
@@ -50,7 +60,6 @@
                     </a>
                 </ul>
             </div>
-            </li>
 
         </ul>
         <button class="logout justify-content-end"

@@ -28,19 +28,19 @@
         @foreach($reports as $report)
         <tr>
             <td>
-                {{ $report->doc_name }}
+                <p class="mt-3">{{ $report->doc_name }}</p>
             </td>
             <td>
-                {{ $report->created_at }}
+                <p class="mt-3">{{ $report->created_at }}</p>
             </td>
-            <td>
+            <td class="align-items-center">
                 @if($report->type == 1)
-                <p>Constancia de Trabajo</p>
+                <p class="mt-3">Constancia de Trabajo</p>
                 @elseif($report->type == 2)
-                <p>Constancia de Salida</p>
+                <p class="mt-3">Constancia de Salida</p>
                 @endif
             </td>
-            <td class="d-flex">
+            <td class="d-flex align-items-center justify-content-center">
                 <a href="{{ asset('storage/' . $report->document) }}" target="_blank">
                     <button class="btn-primary rounded-2">
                         <box-icon name='show' type='solid' color='#ffffff'></box-icon>
@@ -54,7 +54,7 @@
                 <form action="{{ route('reports.delete', $report->id)}}" method="POST">
                     @csrf
                     {{ method_field('DELETE') }}
-                    <button type="button" class="eliminar btn-danger rounded-2" data-bs-toggle="modal"
+                    <button type="button" class="btn-danger rounded-2 mt-3" data-bs-toggle="modal"
                         data-bs-target="#Modal-{{ $report->id }}">
                         <box-icon name='trash' color='#ffffff'></box-icon>
                     </button>

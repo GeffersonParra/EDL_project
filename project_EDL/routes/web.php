@@ -26,6 +26,7 @@ Route::middleware('auth', 'verified')->group(function () {
 });
 
 Route::get('admin/dashboard', [AdminController::class, 'dashboard'])->middleware(RolMiddleware::class)->name('admin.dashboard');
+Route::get('admin/my_profile', [AdminController::class, 'profile'])->middleware(RolMiddleware::class)->name('admin.profile');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

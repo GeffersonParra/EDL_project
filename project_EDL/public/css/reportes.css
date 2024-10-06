@@ -16,7 +16,7 @@
 }
 
 #reportform{
-    display: block;
+    display: none;
     border-radius: 15px;
     height: 18%;
     position: absolute;
