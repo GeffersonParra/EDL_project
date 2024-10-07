@@ -66,7 +66,8 @@
         <hr>
         @yield('content')
     </div>
-    <script src="js/base.js"></script>
+    <script src="js/base.js" defer></script>
+    <script src="{{ asset('js/profile.js') }}" defer></script>
 </body>
 
 </html>

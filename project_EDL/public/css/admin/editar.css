@@ -1,0 +1,164 @@
+.editfoto{
+    background-color: white;
+    text-align: center;
+    border: solid, 2px, rgb(0, 0, 0);
+    box-shadow: 2px 0px 5px rgb(0, 0, 0);
+    height: 30%;
+}
+
+.imagen{
+    position: relative;
+    margin-left: 0.5%;
+    width: 25.8%;
+}
+
+.imagetext{
+    position: relative;
+    margin-top: -48%;
+    height:13vw;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: rgb(255, 255, 255);
+    opacity: 0;
+    transition: opacity 0.5s;
+    pointer-events: none;
+    border-bottom-left-radius: 1000px;
+    border-bottom-right-radius: 1000px;
+    z-index: 10;
+}
+
+.imagetext box-icon{
+    width: 70%;
+    height: 70%;
+}
+
+.imagen:hover .imagetext{
+    opacity: 1;
+}
+
+.lock{
+    position:relative;
+    top: -20%;
+    left: 89%;
+    color:white;
+    margin-bottom: 0%;
+    transition: .5s;
+    opacity: 0;
+}
+
+#lock{
+    position:relative;
+    top: -1rem;
+    left: 89%;
+    color:white;
+    margin-bottom: 0%;
+    transition: .5s;
+    opacity: 0;
+}
+
+.info-box:hover .lock{
+    top: -35%;
+    opacity: 1;
+}
+
+.info-box:hover #lock{
+    top: -2rem;
+    opacity: 1;
+}
+
+.info-box{
+    overflow: hidden;
+}
+
+.info-box div{
+    background-color: transparent;
+    border: 3px solid white;
+    height: 2.5rem;
+    border-radius: 8px;
+    color: white;
+    box-shadow: 5px 5px rgb(27, 27, 27);
+    text-align: left;
+    padding-left: 1.8%;
+    padding-top: 1%;
+    align-self: center;
+    overflow:hidden;
+    margin-bottom: 0%;
+}
+
+.info-box input{
+    width: 100%;
+    background-color: transparent;
+    border: 3px solid white;
+    height: 2.5rem;
+    border-radius: 8px;
+    color: white;
+    box-shadow: 5px 5px rgb(27, 27, 27);
+    text-align: left;
+    padding-left: 1.8%;
+    padding-top: 1%;
+    align-self: center;
+    overflow:visible;
+    margin-bottom: 10%;
+    transition: 1s;
+}
+
+.info-box label{
+    color: white;
+    font-style: normal;
+}
+
+.info-box p{
+    color: white;
+    font-style: normal;
+    margin-bottom: 1%;
+}
+
+.info-box input:focus,
+.info-box input:valid{
+    outline-color: #ffe600;
+    outline-width: 100%;
+}
+
+#option{
+    position: absolute;
+    bottom: 5%;
+    width: 100%;
+}
+
+#Editar{
+    font-weight: 500;
+    background-color: #1368d8;
+    border: none;
+    border-radius: 2px;
+    box-shadow: 5px 5px rgb(27, 27, 27);
+    height: 2.5rem;
+}
+
+#Cancelar{
+    font-weight: 500;
+    background-color: #6d6d6d;
+    border: none;
+    border-radius: 2px;
+    box-shadow: 5px 5px rgb(27, 27, 27);
+    height: 2.5rem;
+}
+
+@media(max-width: 1000px) {
+    .editfoto{
+    height: 8rem;
+    }
+
+    #Editar{
+        margin-top: 2rem;
+    }
+
+    .lock{
+        top: 1rem;
+        background-color: rgb(29, 29, 29);
+        left: 70%;
+    }
+    
+    #lock{
+        left: 75%;
+        background-color: rgb(29, 29, 29);
+    }
+}

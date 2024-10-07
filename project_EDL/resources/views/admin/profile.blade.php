@@ -1,11 +1,10 @@
-@extends('employee.basedashboard')
-@section('title', 'Mi Perfil | EDL')
-<link rel="stylesheet" href="css/styledashboard.css">
-<link rel="stylesheet" href="css/info.css">
+@extends('admin.basedashboard')
+@section('title', 'Perfil De Administrador | EDL')
+<link rel="stylesheet" href="{{ asset('css/admin/info.css') }}">
 @section('content')
 @section('subtitle', 'Tus Datos Básicos')
-<div class="imagen col-4 mx-auto" id="imagen">
-    <img class="rounded-circle w-100 editfoto" id="photo" src='{{ Storage::url($usuario->photo) }}'>
+<div class="imagen col-4 mx-auto">
+    <img class="rounded-circle w-100 editfoto" src='{{ Storage::url($usuario->photo) }}'>
 </div>
 <div class="container w-50 h-100 mt-1 self-center">
     <div class="row mx-auto">
@@ -74,7 +73,7 @@
             <div style="font-weight: 700">{{$usuario->status}}</div>
         </div>
     </div>
-    <a href="{{ route('my_profile.edit') }}">
+    <a href="{{ route('admin.my_profile.edit') }}">
         <button class="Editar col-12 mt-4">Modificar Datos</button>
     </a>
 </div>
@@ -85,4 +84,5 @@
 </div>
 @endif
 <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+<script src="js/profile.js" defer></script>
 @endsection

@@ -39,7 +39,7 @@ body{
 .admin {
     background: linear-gradient(135deg, #d4af37, #ffd700, #bd8a09, #daa520, #ffb700);
     background-size: 400% 400%;
-    animation: gold 10s ease infinite;
+    animation: gold 5s ease infinite;
     color: rgb(0, 0, 0);
     font-style: normal;
     width: 10rem;

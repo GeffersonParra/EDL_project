@@ -20,13 +20,15 @@ Route::middleware('auth', 'verified', 'employee')->group(function () {
     Route::get('/reports', [ReportController::class, 'show'])->name('reports');
     Route::get('/reports/new', [ReportController::class, 'new'])->name('reports.new');
     Route::post('/reports/new', [ReportController::class, 'generate'])->name('reports.create');
-    Route::get('/reports/download/{name}', [ReportController:: class, 'download_pdf'])->name('reports.download');
-    Route::delete('/reports/delete/{id}', [ReportController:: class, 'delete'])->name('reports.delete');
+    Route::get('/reports/download/{name}', [ReportController::class, 'download_pdf'])->name('reports.download');
+    Route::delete('/reports/delete/{id}', [ReportController::class, 'delete'])->name('reports.delete');
 });
 
 Route::middleware('auth', 'admin')->group(function () {
-Route::get('admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
-Route::get('admin/my_profile', [AdminController::class, 'profile'])->name('admin.profile');
+    Route::get('admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+    Route::get('admin/my_profile', [AdminController::class, 'profile'])->name('admin.my_profile');
+    Route::get('admin/my_profile/edit', [AdminController::class, 'edit'])->name('admin.my_profile.edit');
+    Route::put('admin/my_profile/edit/{id}', [AdminController::class, 'update'])->name('admin.my_profile.update');
 });
 
 Route::middleware('auth')->group(function () {
@@ -35,4 +37,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
