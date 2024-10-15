@@ -1,6 +1,5 @@
 @extends('employee.basedashboard')
 @section('title', 'Constancias y Archivos | EDL')
-<link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/reportes.css">
 @section('subtitle', 'Constancias Y Archivos')
 @section('content')
@@ -40,7 +39,7 @@
                 <p class="mt-3">Constancia de Salida</p>
                 @endif
             </td>
-            <td class="d-flex align-items-center justify-content-center">
+            <td class="d-flex align-items-center justify-content-center" id="actions">
                 <a href="{{ asset('storage/' . $report->document) }}" target="_blank">
                     <button class="btn-primary rounded-2">
                         <box-icon name='show' type='solid' color='#ffffff'></box-icon>
@@ -87,27 +86,31 @@
 </div>
 @endif
 <div class="mb-5 col-4" id="reportform">
-    <form action="{{ route('reports.create') }}" method="POST" class="d-flex flex-column">
+    <form action="{{ route('reports.create') }}" method="POST" class="d-flex flex-column h-100">
         @csrf
         @if($usuario->status == "CONTRATADO")
         <button name="action" value="trabajo" class="btn-primary col-10 mx-auto mt-3 type_btn">
-            <box-icon name='briefcase-alt-2' type='solid' color='#ffffff' class="icon"></box-icon>
-            <p>Constancia de trabajo</p>
+            <div class="d-flex h-100 justify-content-center align-items-center">
+                <box-icon name='briefcase-alt-2' type='solid' color='#ffffff' class="icon col-1 h-100"></box-icon>
+                <h5 class="col-7 mt-1">Constancia de trabajo</h5>
+            </div>
         </button>
         @else
         <button name="action" value="salida" class="btn-danger col-10 mx-auto mt-3 type_btn">
-            <box-icon name='log-out' color='#ffffff' class="icon"></box-icon>
-            <p>Constancia de salida</p>
+            <div class="d-flex h-100 justify-content-center align-items-center">
+                <box-icon name='log-out' color='#ffffff' class="icon col-1 h-100"></box-icon>
+                <h5 class="col-7 mt-1">Constancia de salida</h5>
+            </div>
         </button>
         @endif
     </form>
 </div>
-<div class="col-xl-6 col-lg-6 col-md-8 col-sm-12 mx-auto" id="btn">
+<div class="col-xl-6 col-lg-6 col-md-8 col-sm-12 mx-auto">
     <button class="Nuevo col-12 mx-auto" id="new">Nueva Constancia</button>
 </div>
 @endsection
 <script src="js/reports.js" defer></script>
 <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
 </script>

@@ -1,8 +1,16 @@
-document.getElementById('new').addEventListener('click', function(){
-    if (document.getElementById("reportform").style.display == 'block'){
-        document.getElementById("reportform").style.display = 'none';
+const nuevoBtn = document.querySelector('.nuevo');
+const reportForm = document.getElementById('reportform');
+function mostrarFormulario() {
+    if (!(reportForm.classList.contains("mostrar"))) {
+        reportForm.style.display = "block";
+        nuevoBtn.classList.add("mostrar");
+        setTimeout(() => {
+            reportForm.classList.add("mostrar");
+        }, 100);
+    } else {
+        reportForm.style.display = 'none'
+        reportForm.classList.remove("mostrar")
+        nuevoBtn.classList.remove("mostrar");
     }
-    else{
-        document.getElementById("reportform").style.display = 'block';
-    }
-})
+}
+nuevoBtn.addEventListener('click', mostrarFormulario);
