@@ -201,6 +201,8 @@ hr{
 .mini-img{
     display: none;
     height: 80%;
+    width: 40%;
+    object-fit:cover;
 }
 
 .mini-text{
@@ -237,6 +239,10 @@ hr{
         display: flex;
         flex-direction: column;
         height: 1rem;
+    }
+
+    #mini-nav{
+        height: 100%;
     }
 
     .vertical-nav{

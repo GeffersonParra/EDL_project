@@ -11,9 +11,9 @@
 
 <body>
     <div class="d-flex vertical-nav col-2 align-items-center">
-        <div class="col-12 d-flex gap-4">
+        <div class="col-12 d-flex gap-4" id="mini-nav">
             <li class="dropdown" style="list-style: none">
-                <button id="menu-toggle" class="btn-menu mt-2 dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                <button id="menu-toggle" class="btn-menu mt-2 dropdown-toggle h-75" role="button" data-bs-toggle="dropdown"
                     aria-expanded="false">
                     &#9776;
                 </button>
@@ -30,7 +30,7 @@
                     </button>
                 </ul>
             </li>
-            <div class="mini col-3 d-flex h-25 align-items-center">
+            <div class="mini col-3 d-flex h-100 align-items-center">
                 <img class="mx-auto mini-img rounded-circle" src='{{ Storage::url($usuario->photo) }}'>
                 <div class="d-flex flex-column">
                     <h6 class="mx-auto mini-text text-center col-12 mt-2">{{ $usuario->name }}</h6>

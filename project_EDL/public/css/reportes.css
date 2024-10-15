@@ -40,4 +40,12 @@
     #actions{
         height: 10.4rem;
     }
+
+    .nuevo{
+        margin-bottom: 2rem;
+    }
+
+    #reportform{
+        width: 75%;
+    }
 }
