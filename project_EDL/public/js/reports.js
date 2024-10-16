@@ -1,5 +1,6 @@
-const nuevoBtn = document.querySelector('.nuevo');
+const nuevoBtn = document.getElementById('new');
 const reportForm = document.getElementById('reportform');
+
 function mostrarFormulario() {
     if (!(reportForm.classList.contains("mostrar"))) {
         reportForm.style.display = "block";
@@ -8,9 +9,10 @@ function mostrarFormulario() {
             reportForm.classList.add("mostrar");
         }, 100);
     } else {
-        reportForm.style.display = 'none'
-        reportForm.classList.remove("mostrar")
+        reportForm.style.display = 'none';
+        reportForm.classList.remove("mostrar");
         nuevoBtn.classList.remove("mostrar");
     }
 }
+
 nuevoBtn.addEventListener('click', mostrarFormulario);

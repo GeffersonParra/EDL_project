@@ -248,7 +248,7 @@ hr{
     .vertical-nav{
         position: fixed;
         flex-direction: column;
-        height: 9%;
+        height: 4rem;/*9%*/
         width: 100%;
         overflow: visible;
         justify-items: center;
@@ -264,6 +264,7 @@ hr{
 
     .content{
         margin-top: 5rem;
+        margin-bottom: 10%;
         width: 90%;
         z-index: -2;
         height:fit-content;
@@ -319,6 +320,15 @@ hr{
     
     .mini-occ{
         display: block;
+    }
+
+    .modal{
+        margin-top: 4rem;
+        z-index: 2000 !important;
+    }
+
+    .modal-backdrop {
+        z-index: -3;
     }
 }
 

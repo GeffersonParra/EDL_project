@@ -52,4 +52,10 @@ class AdminController extends Controller
             return redirect()->route("admin.my_profile")->with('success', 'Datos modificados exitosamente.');
         }
     }
+
+    public function employees(Request $request){
+        $usuarios = User::all();
+        $usuario = $request->user();
+        return view("admin.employees", compact("usuarios"));
+    }
 }

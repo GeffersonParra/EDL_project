@@ -29,6 +29,7 @@ Route::middleware('auth', 'admin')->group(function () {
     Route::get('admin/my_profile', [AdminController::class, 'profile'])->name('admin.my_profile');
     Route::get('admin/my_profile/edit', [AdminController::class, 'edit'])->name('admin.my_profile.edit');
     Route::put('admin/my_profile/edit/{id}', [AdminController::class, 'update'])->name('admin.my_profile.update');
+    Route::get('admin/employees/', [AdminController::class, 'employees'])->name('admin.my_profile.edit');
 });
 
 Route::middleware('auth')->group(function () {

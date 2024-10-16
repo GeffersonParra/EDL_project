@@ -67,8 +67,7 @@
                                         aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                    <p>¿Estás seguro de que quieres eliminar el reporte: <b>{{ $report->doc_name
-                                            }}</b></p>
+                                    <p>¿Estás seguro de que quieres eliminar el reporte: <b>{{ $report->doc_name}}</b>?</p>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary"
@@ -105,12 +104,10 @@
         @endif
     </form>
 </div>
-<div class="col-xl-6 col-lg-6 col-md-8 col-sm-12 mx-auto">
+<div class="col-xl-6 col-lg-6 col-md-8 col-sm-6 mx-auto">
     <button class="Nuevo col-12 mx-auto" id="new">Nueva Constancia</button>
 </div>
 @endsection
 <script src="js/reports.js" defer></script>
 <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
 </script>
