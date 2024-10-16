@@ -22,6 +22,15 @@ body{
     border: solid, 2px, rgb(0, 0, 0);
     box-shadow: 2px 0px 5px rgb(0, 0, 0);
     min-width: 40%;
+    object-fit: cover;
+}
+
+.mini-foto{
+    border: solid, 2px, rgb(0, 0, 0);
+    box-shadow: 2px 0px 5px rgb(0, 0, 0);
+    height: 5rem;
+    width: 5rem;
+    object-fit: cover;
 }
 
 .nombre{

@@ -21,6 +21,7 @@ body{
     border: solid, 2px, rgb(0, 0, 0);
     box-shadow: 2px 0px 5px rgb(0, 0, 0);
     min-width: 40%;
+    object-fit: cover;
 }
 
 .nombre{
@@ -248,7 +249,7 @@ hr{
     .vertical-nav{
         position: fixed;
         flex-direction: column;
-        height: 4rem;/*9%*/
+        height: 4rem;
         width: 100%;
         overflow: visible;
         justify-items: center;

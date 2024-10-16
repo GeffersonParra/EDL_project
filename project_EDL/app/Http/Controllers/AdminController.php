@@ -56,6 +56,6 @@ class AdminController extends Controller
     public function employees(Request $request){
         $usuarios = User::all();
         $usuario = $request->user();
-        return view("admin.employees", compact("usuarios"));
+        return view("admin.employees", compact("usuarios", "usuario"));
     }
 }
