@@ -4,9 +4,7 @@
 <link rel="stylesheet" href="css/info.css">
 @section('content')
 @section('subtitle', 'Tus Datos Básicos')
-<div class="imagen col-4 mx-auto" id="imagen">
-    <img class="rounded-circle w-100 editfoto" id="photo" src='{{ Storage::url($usuario->photo) }}'>
-</div>
+<img class="rounded-circle editfoto" id="photo" src='{{ Storage::url($usuario->photo) }}'>
 <div class="container w-50 h-100 mt-1 self-center">
     <div class="row mx-auto">
         <div class="info-box col-12 col-md-6">

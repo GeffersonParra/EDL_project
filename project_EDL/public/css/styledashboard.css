@@ -201,9 +201,10 @@ hr{
 
 .mini-img{
     display: none;
-    height: 80%;
-    width: 40%;
+    height: 3.5rem;
+    width: 3.5rem;
     object-fit:cover;
+   
 }
 
 .mini-text{
@@ -233,6 +234,13 @@ hr{
     border-radius: 10px;
     margin-bottom: 0.5rem;
     text-align: center;
+}
+
+@media(min-width: 1000px){
+    .text1{
+        width: fit-content;
+        margin-left: 30%;
+    }
 }
 
 @media(max-width: 1000px) {

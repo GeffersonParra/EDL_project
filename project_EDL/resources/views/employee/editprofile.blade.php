@@ -9,8 +9,8 @@
 <form action="{{ route('my_profile.update', $usuario->id) }}" method="POST" enctype="multipart/form-data" class="w-100">
     @csrf
     {{ method_field('PUT') }}
-    <div class="imagen col-4 mx-auto" id="imagen">
-        <img class="rounded-circle w-100 editfoto" id="editfoto" src='{{ Storage::url($usuario->photo) }}'>
+    <div class="imagen mx-auto justify-contents-center" id="imagen">
+        <img class="rounded-circle editfoto" id="editfoto" src='{{ Storage::url($usuario->photo) }}'>
         <div class="imagetext d-flex">
             <box-icon type='solid' name='camera-plus' class="mx-auto my-auto"></box-icon>
         </div>
@@ -96,7 +96,7 @@
             </div>
             <div class="row mt-5 col col-sm-12 col-lg-12 col-xl-12 mx-auto">
                 <a href="{{ route( 'my_profile.edit' ) }}"><button type="submit" class="mx-auto col-12" id="Editar">Guardar</button></a>
-                <a href="{{ route( 'my_profile' ) }}"><button type="submit" class="mx-auto col-12 mt-3 mb-5" id="Cancelar">Cancelar</button></a>
+                <a href="{{ route( 'my_profile' ) }}"><button type="button" class="mx-auto col-12 mt-3 mb-5" id="Cancelar">Cancelar</button></a>
             </div>
             <input type="file" id="photo" name="photo" style="display: none;" accept="image/*">
 </form>

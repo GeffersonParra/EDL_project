@@ -16,8 +16,8 @@
         </a>
         <img class="foto h-25 rounded-circle col-8" src='{{ Storage::url($usuario->photo) }}'>
         <h6 class="nombre mt-3">{{ $usuario->name }}</h6>
-        <h6 class="cargo">{{ $usuario->occupation }} <div class="admin rounded-pill text-center mx-auto mt-2" style="">
-                Admin</div>
+        <h6 class="cargo">{{ $usuario->occupation }}
+            <div class="admin rounded-pill text-center mx-auto mt-2">Admin</div>
         </h6>
         <ul class="opciones d-flex">
             <a href="#" id="encabezado">
@@ -83,4 +83,5 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>
 </body>
+
 </html>

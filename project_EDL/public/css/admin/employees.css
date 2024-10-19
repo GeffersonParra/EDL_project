@@ -1,0 +1,70 @@
+.user-pill {
+    background: linear-gradient(135deg, #37afd4, #00d5ff, #09a5bd, #20ceda, #00d5ff);
+    background-size: 400% 400%;
+    animation: blue 5s ease infinite;
+    color: rgb(0, 0, 0);
+    font-style: normal;
+    width: 10rem;
+    height: 1.5rem;
+    text-align: center;
+    font-family: sans-serif;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    padding-top: 2px;
+}
+
+@keyframes blue {
+    0% {
+        background-position: 50% 0%;
+    }
+
+    50% {
+        background-position: 50% 100%;
+    }
+
+    100% {
+        background-position: 50% 0%;
+    }
+}
+
+.admin {
+    background: linear-gradient(135deg, #d4af37, #ffd700, #bd8a09, #daa520, #ffb700);
+    background-size: 400% 400%;
+    animation: gold 5s ease infinite;
+    color: rgb(0, 0, 0);
+    font-style: normal;
+    width: 10rem;
+    height: 1.5rem;
+    text-align: center;
+    font-family: sans-serif;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    padding-top:2px;
+  }
+  
+  @keyframes gold {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+.employee-table {
+    background-color: #0d1b2a;
+    border-radius: 20px;
+}
+
+table th {
+    color: aliceblue;
+}
+
+.employee-admin {
+    color: gold;
+}
+
+.employee-normal {
+    color: rgb(255, 255, 255);
+}
+
+.user {
+    color: gold;
+}
