@@ -1,82 +1,87 @@
 @extends('admin.basedashboard')
-@section('title', 'Perfil De Administrador | EDL')
+@section('title', 'Perfil De ' .$empleado->first_name." ".$empleado->first_lastname. ' | EDL')
 <link rel="stylesheet" href="{{ asset('css/admin/info.css') }}">
 @section('content')
-@section('subtitle', 'Tus Datos Básicos')
-<img class="editfoto rounded-circle" src='{{ Storage::url($usuario->photo) }}'>
+@section('subtitle', 'Reporte de empleado')
+<img class="editfoto rounded-circle" src='{{ Storage::url($empleado->photo) }}'>
 <div class="container w-50 h-100 mt-1 self-center">
     <div class="row mx-auto">
         <div class="info-box col-12 col-md-6">
             <p class="text">Nombres: </p>
-            <div>{{$usuario->first_name." ".$usuario->second_name}}</div>
+            <div>{{$empleado->first_name." ".$empleado->second_name}}</div>
         </div>
         <div class="info-box col-12 col-md-6">
             <p class="text">Dirección: </p>
-            <div>{{$usuario->address}}</div>
+            <div>{{$empleado->address}}</div>
         </div>
     </div>
     <div class="row mx-auto">
         <div class="info-box col-12 col-md-6">
             <p class="text">Apellidos: </p>
-            <div>{{$usuario->first_lastname." ".$usuario->second_lastname}}</div>
+            <div>{{$empleado->first_lastname." ".$empleado->second_lastname}}</div>
         </div>
         <div class="info-box col-12 col-md-6">
             <p class="text">Fecha de Nacimiento: </p>
-            <div>{{$usuario->birth}}</div>
+            <div>{{$empleado->birth}}</div>
         </div>
     </div>
     <div class="row mx-auto">
         <div class="info-box col-12 col-md-6">
             <p class="text"># Documento: </p>
-            <div>{{$usuario->id}}</div>
+            <div>{{$empleado->id}}</div>
         </div>
         <div class="info-box col-12 col-md-6">
             <p class="text">Tipo De Identificación: </p>
-            <div>{{$usuario->idName->id_type}}</div>
+            <div>{{$empleado->idName->id_type}}</div>
         </div>
     </div>
     <div class="row mx-auto">
         <div class="info-box col-12 col-md-6">
             <p class="text">Fecha de Entrada: </p>
-            <div>{{$usuario->inday}}</div>
+            <div>{{$empleado->inday}}</div>
         </div>
         <div class="info-box col-12 col-md-6">
             <p class="text">Fecha de Salida: </p>
-            @if($usuario->outday == null)
+            @if($empleado->outday == null)
             <div>N/A</div>
             @else
-            <div>{{$usuario->outday}}</div>
+            <div>{{$empleado->outday}}</div>
             @endif
         </div>
     </div>
     <div class="row mx-auto">
         <div class="info-box col-12 col-md-6">
             <p class="text">Teléfono: </p>
-            <div>{{$usuario->telephone}}</div>
+            <div>{{$empleado->telephone}}</div>
         </div>
         <div class="info-box col-12 col-md-6">
             <p class="text">E-mail: </p>
-            <div>{{$usuario->email}}</div>
+            <div>{{$empleado->email}}</div>
         </div>
     </div>
     <div class="row mx-auto">
         <div class="info-box col-12 col-md-6">
             <p class="text">Cargo: </p>
-            <div>{{$usuario->occupationName->occupation_name}}</div>
+            <div>{{$empleado->occupationName->occupation_name}}</div>
         </div>
         <div class="info-box col-12 col-md-6">
             <p class="text">Proyecto Actual: </p>
-            <div>{{$usuario->actualproject}}</div>
+            <div>{{$empleado->actualproject}}</div>
         </div>
     </div>
     <div class="row mx-auto">
         <div class="info-box col-12 col-md-6 align-self-center mx-auto">
             <p class="text">Estado: </p>
-            <div style="font-weight: 700">{{$usuario->statusName->status_name}}</div>
+            <div style="font-weight: 700">{{$empleado->statusName->status_name}}</div>
         </div>
     </div>
-    <a href="{{ route('admin.my_profile.edit') }}">
-        <button class="Editar col-12 mt-4 mb-5">Modificar Datos</button>
+    @if($empleado->role_id != 1)
+    <a href="{{ route('admin.employees.edit', $empleado->id) }}">
+        <button class="Editar col-12 mt-4">Modificar Datos</button>
+    </a>
+    @endif
+    <a href="{{ route('admin.employees.list', $empleado->id) }}">
+        <button class="Cancelar col-12 mt-3">Volver a la lista</button>
     </a>
 </div>
 @if(session('success'))

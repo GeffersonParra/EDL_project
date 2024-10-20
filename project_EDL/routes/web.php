@@ -29,7 +29,10 @@ Route::middleware('auth', 'admin')->group(function () {
     Route::get('admin/my_profile', [AdminController::class, 'profile'])->name('admin.my_profile');
     Route::get('admin/my_profile/edit', [AdminController::class, 'edit'])->name('admin.my_profile.edit');
     Route::put('admin/my_profile/edit/{id}', [AdminController::class, 'update'])->name('admin.my_profile.update');
-    Route::get('admin/employees/', [AdminController::class, 'employees'])->name('admin.employees.list');
+    Route::get('admin/employees/', [AdminController::class, 'employeesList'])->name('admin.employees.list');
+    Route::get('admin/employee/{id}', [AdminController::class, 'employeeShow'])->name('admin.employees.show');
+    Route::get('admin/employee/edit/{id}', [AdminController::class, 'employeeEdit'])->name('admin.employees.edit');
+    Route::put('admin/employee/edit/{id}', [AdminController::class, 'employeeUpdate'])->name('admin.employees.update');
 });
 
 Route::middleware('auth')->group(function () {

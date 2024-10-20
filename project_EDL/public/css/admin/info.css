@@ -51,13 +51,22 @@
 
 .Editar{
     font-weight: 500;
-    margin-bottom: 20%;
     background-color: #1368d8;
     border: none;
     border-radius: 2px;
     height: 40px;
     width: 80%;
     box-shadow: 5px 5px rgb(27, 27, 27);
+}
+
+.Cancelar{
+    font-weight: 500;
+    background-color: #6d6d6d;
+    border: none;
+    margin-bottom: 20%;
+    border-radius: 2px;
+    box-shadow: 5px 5px rgb(27, 27, 27);
+    height: 2.5rem;
 }
 
 @media(max-width: 1000px) {

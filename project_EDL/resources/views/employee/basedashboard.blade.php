@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,11 +18,11 @@
                 </button>
                 <ul class="dropdown-menu">
                     <li class="mini-encabezado">Mi perfil</li>
-                    <li><a class="dropdown-item mini-li" href="my_profile">Ver mis datos</a></li>
+                    <li><a class="dropdown-item mini-li" href="{{url('my_profile')}}">Ver mis datos</a></li>
                     <li class="mini-encabezado">Constancias</li>
-                    <li><a class="dropdown-item mini-li" href="reports">Ver Constancias Generadas</a></li>
+                    <li><a class="dropdown-item mini-li" href="{{url('reports')}}">Ver Constancias Generadas</a></li>
                     <li class="mini-encabezado">Proyectos</li>
-                    <li><a class="dropdown-item mini-li" href="projects">Ver proyectos</a></li>
+                    <li><a class="dropdown-item mini-li" href="{{url('projects')}}">Ver proyectos</a></li>
                     <button class="mini-logout justify-content-end"
                         onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                         Cerrar sesión
@@ -46,34 +45,34 @@
             <h6 class="nombre mt-3">{{ $usuario->first_name }}</h6>
             <h6 class="cargo">{{ $usuario->occupationName->occupation_name }}</h6>
             <ul class="opciones d-flex">
-                <a href="#" id="encabezado">
+                <a id="encabezado" style="cursor:pointer">
                     <li class="list-item" id="normal-menu">Mi Perfil
                 </a>
                 <div class="mini-menu">
                     <ul>
-                        <a href="my_profile">
+                        <a href="{{url('my_profile')}}">
                             <li>Ver mis datos</li>
                         </a>
                     </ul>
                 </div>
                 </li>
-                <a href="#" id="encabezado">
+                <a id="encabezado" style="cursor:pointer">
                     <li class="list-item" id="normal-menu">Constancias
                 </a>
                 <div class="mini-menu">
                     <ul>
-                        <a href="reports">
+                        <a href="{{url('reports')}}">
                             <li>Ver Constancias Generadas</li>
                         </a>
                     </ul>
                 </div>
                 </li>
-                <a href="#" id="encabezado">
+                <a id="encabezado" style="cursor:pointer">
                     <li class="list-item" id="normal-menu">Proyectos
                 </a>
                 <div class="mini-menu">
                     <ul>
-                        <a href="projects">
+                        <a href="{{url('projects')}}">
                             <li>Ver Proyectos</li>
                         </a>
                     </ul>

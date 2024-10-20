@@ -7,7 +7,7 @@
     text-align: center;
     border: solid, 2px, rgb(0, 0, 0);
     box-shadow: 2px 0px 5px rgb(0, 0, 0);
-    min-height: 18rem;
+    height: 18rem;
     width: 18rem;
     object-fit: cover;
     margin-bottom: 2rem;

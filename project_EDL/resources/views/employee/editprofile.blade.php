@@ -1,7 +1,7 @@
 @extends('employee.basedashboard')
 @section('title', 'Editar Tus Datos | EDL')
-<base href="/">
-<link rel="stylesheet" href="css/styledashboard.css">
+<base href="/my_profile">
+<link rel="stylesheet" href="{{asset('css/styledashboard.css')}}">
 <link rel="stylesheet" href="css/editar.css">
 <script src="js/base.js"></script>
 @section('content')

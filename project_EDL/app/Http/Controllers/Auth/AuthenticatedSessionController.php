@@ -22,7 +22,7 @@ class AuthenticatedSessionController extends Controller
         $request->authenticate();
         $usuario = $request->user();
         $request->session()->regenerate();
-        if($usuario->role === 1){
+        if($usuario->role_id === 1){
             return redirect()->route('admin.dashboard');
         }
         else{

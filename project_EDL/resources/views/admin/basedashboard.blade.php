@@ -25,7 +25,7 @@
             </a>
             <div class="mini-menu">
                 <ul>
-                    <a href="my_profile">
+                    <a href="{{url('admin/my_profile')}}">
                         <li>Ver mis datos</li>
                     </a>
                 </ul>
@@ -35,7 +35,7 @@
             </a>
             <div class="mini-menu">
                 <ul>
-                    <a href="employees">
+                    <a href="{{url('admin/employees')}}">
                         <li>Consultar lista de empleados</li>
                     </a>
                 </ul>
@@ -45,7 +45,7 @@
             </a>
             <div class="mini-menu">
                 <ul>
-                    <a href="reports">
+                    <a href="{{url('admin/reports')}}">
                         <li>Ver Constancias Generadas</li>
                     </a>
                 </ul>
@@ -55,7 +55,7 @@
             </a>
             <div class="mini-menu">
                 <ul>
-                    <a href="projects">
+                    <a href="{{url('admin/projects')}}">
                         <li>Ver Proyectos</li>
                     </a>
                 </ul>
