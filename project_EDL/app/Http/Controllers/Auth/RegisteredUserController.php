@@ -30,8 +30,10 @@ class RegisteredUserController extends Controller
     public function store(Request $request): RedirectResponse
     {
         $request->validate([
-            'name' => ['required', 'string', 'max:255'],
-            'lastname' => ['required', 'string', 'max:255'],
+            'first_name' => ['required', 'string', 'max:50'],
+            'second_name' => ['string', 'max:50'],
+            'first_lastname' => ['required', 'string', 'max:50'],
+            'second_lastname' => ['string', 'max:50'],
             'idtype' => ['required', 'string', 'max:4'],
             'occupation' => ['required', 'string', 'max:50'],
             'birth' => ['required', 'date'],
@@ -44,8 +46,10 @@ class RegisteredUserController extends Controller
 
         $user = User::create([
             'id' => $request->id,
-            'name' => $request->name,
-            'lastname' => $request->lastname,
+            'first_name' => $request->first_name,
+            'second_name' => $request->second_name,
+            'first_lastname' => $request->first_lastname,
+            'second_lastname' => $request->second_lastname,
             'idtype' => $request->idtype,
             'occupation' => $request->occupation,
             'telephone' => $request->telephone,

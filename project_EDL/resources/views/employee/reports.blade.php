@@ -87,7 +87,7 @@
 <div class="mb-5 col-4" id="reportform">
     <form action="{{ route('reports.create') }}" method="POST" class="d-flex flex-column h-100">
         @csrf
-        @if($usuario->status == "CONTRATADO")
+        @if($usuario->statusName->status_name == "CONTRATADO")
         <button name="action" value="trabajo" class="btn-primary col-10 mx-auto mt-3 type_btn">
             <div class="d-flex h-100 justify-content-center align-items-center">
                 <box-icon name='briefcase-alt-2' type='solid' color='#ffffff' class="icon col-1 h-100"></box-icon>

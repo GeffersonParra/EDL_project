@@ -9,12 +9,14 @@ use Laratrust\Traits\LaratrustUserTrait;
 
 class User extends Authenticatable
 {
-    use HasFactory, Notifiable, HasRoles;
+    use HasFactory, Notifiable;
 
     protected $fillable = [
         'id',
-        'name',
-        'lastname',
+        'first_name',
+        'second_name',
+        'first_lastname',
+        'second_lastname',
         'idtype',
         'email',
         'telephone',
@@ -26,6 +28,7 @@ class User extends Authenticatable
         'outday',
         'actualproject',
         'status',
+        'role_id',
         'password',
     ];
 
@@ -33,6 +36,18 @@ class User extends Authenticatable
         'password',
         'remember_token',
     ];
+
+    public function idName(){
+        return $this->belongsTo(IdType::class, 'idtype', 'id');
+    }
+
+    public function occupationName(){
+        return $this->belongsTo(Occupation::class, 'occupation', 'id');
+    }
+
+    public function statusName(){
+        return $this->belongsTo(Status::class, 'status', 'id');
+    }
 
     protected function casts(): array
     {

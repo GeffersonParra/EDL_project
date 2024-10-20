@@ -8,8 +8,8 @@
 <form action="{{ route('admin.my_profile.update', $usuario->id) }}" method="POST" enctype="multipart/form-data" class="w-100">
     @csrf
     {{ method_field('PUT') }}
-    <div class="imagen col-4 mx-auto" id="imagen">
-        <img class="rounded-circle w-100 editfoto" id="editfoto" src='{{ Storage::url($usuario->photo) }}'>
+    <div class="imagen mx-auto justify-contents-center" id="imagen">
+        <img class="rounded-circle editfoto" id="editfoto" src='{{ Storage::url($usuario->photo) }}'>
         <div class="imagetext d-flex">
             <box-icon type='solid' name='camera-plus' class="mx-auto my-auto"></box-icon>
         </div>
@@ -18,49 +18,60 @@
         <div class="container self-center w-50 mt-5">
             <div class="row mx-auto">
                 <div class="info-box col-12 col-md-6">
-                    <p class="text">Nombres: </p>
-                    <div>{{$usuario->name}}</div>
-                    <box-icon name='lock-alt' type='solid' color='#ffffff' class="lock"></box-icon>
+                    <label for="first_name">Primer Nombre: </label>
+                    <input type="text" name="first_name" id="first_name"
+                        value="{{$usuario->first_name}}" required>
                 </div>
-                <div class="info-box col-12 col-md-6 mt-1">
+                <div class="info-box col-12 col-md-6">
+                    <label for="second_name">Segundo Nombre: </label>
+                    <input type="text" name="second_name" id="second_name"
+                        value="{{$usuario->second_name}}" required>
+                </div>
+            </div>
+            <div class="row mx-auto">
+                <div class="info-box col-12 col-md-6">
+                    <label for="first_lastname">Primer Apellido: </label>
+                    <input type="text" name="first_lastname" id="first_lastname"
+                        value="{{$usuario->first_lastname}}" required>
+                </div>
+                <div class="info-box col-12 col-md-6">
+                    <label for="second_lastname">Segundo Apellido: </label>
+                    <input type="text" name="second_lastname" id="second_lastname"
+                        value="{{$usuario->second_lastname}}" required>
+                </div>
+            </div>
+            <div class="row mx-auto">
+                <div class="info-box col-12 col-md-6">
                     <label for="address">Dirección: </label>
                     <input type="text" name="address" id="address" value="{{$usuario->address}}" required>
                 </div>
-            </div>
-            <div class="row mx-auto">
                 <div class="info-box col-12 col-md-6">
-                    <p class="text">Apellidos: </p>
-                    <div>{{$usuario->lastname}}</div>
-                    <box-icon name='lock-alt' type='solid' color='#ffffff' class="lock"></box-icon>
-                </div>
-                <div class="info-box col-12 col-md-6">
-                    <p class="text">Fecha de Nacimiento: </p>
-                    <div>{{$usuario->birth}}</div>
-                    <box-icon name='lock-alt' type='solid' color='#ffffff' class="lock"></box-icon>
+                    <label for="birth">Fecha de nacimiento: </label>
+                    <input type="date" name="birth" id="birth" value="{{$usuario->birth}}" required>
                 </div>
             </div>
             <div class="row mx-auto">
                 <div class="info-box col-12 col-md-6">
-                    <p class="text"># Documento: </p>
-                    <div>{{$usuario->id}}</div>
-                    <box-icon name='lock-alt' type='solid' color='#ffffff' class="lock"></box-icon>
+                    <label for="id"># Documento: </label>
+                    <input type="number" name="id" id="id" value="{{$usuario->id}}" required>
                 </div>
                 <div class="info-box col-12 col-md-6">
-                    <p class="text">Tipo De Identificación: </p>
-                    <div>{{$usuario->idtype}}</div>
-                    <box-icon name='lock-alt' type='solid' color='#ffffff' class="lock"></box-icon>
+                    <label for="idtype">Tipo De Identificación: </label>
+                    <select name="idtype" id="idtype">{{$usuario->idName->id_type}}
+                        @foreach($idtypes as $type)
+                            <option value={{$type->id}}>{{$type->id_type}}</option>
+                        @endforeach
+                      </select>
                 </div>
             </div>
             <div class="row mx-auto">
                 <div class="info-box col-12 col-md-6">
-                    <p class="text">Fecha de Entrada: </p>
-                    <div>{{$usuario->inday}}</div>
-                    <box-icon name='lock-alt' type='solid' color='#ffffff' class="lock"></box-icon>
+                    <label for="inday">Fecha de entrada: </label>
+                    <input type="date" name="inday" id="inday" value="{{$usuario->inday}}" required>
                 </div>
                 <div class="info-box col-12 col-md-6">
-                    <p class="text">Fecha de Salida: </p>
-                    <div>{{$usuario->outday}}</div>
-                    <box-icon name='lock-alt' type='solid' color='#ffffff' class="lock"></box-icon>
+                    <label for="outday">Fecha de salida: </label>
+                    <input type="date" name="outday" id="outday">
                 </div>
             </div>
             <div class="row mx-auto">
@@ -76,21 +87,26 @@
             </div>
             <div class="row mx-auto">
                 <div class="info-box col-12 col-md-6">
-                    <p class="text">Cargo: </p>
-                    <div>{{$usuario->occupation}}</div>
-                    <box-icon name='lock-alt' type='solid' color='#ffffff' class="lock"></box-icon>
+                    <label for="occupation">Cargo: </label>
+                    <select name="occupation" id="occupation">{{$usuario->occupationName->occupation_name}}
+                        @foreach($occupations as $occupation)
+                            <option value={{$occupation->id}}>{{$occupation->occupation_name}}</option>
+                        @endforeach
+                      </select>
                 </div>
-                <div class="info-box col-12 col-md-6 mt-1">
+                <div class="info-box col-12 col-md-6">
                     <label for="actualproject">Proyecto Actual: </label>
-                    <input type="text" name="actualproject" id="actualproject" value="{{$usuario->actualproject}}"
-                        required>
+                    <input type="text" name="actualproject" id="actualproject" value="{{$usuario->actualproject}}"required>
                 </div>
             </div>
             <div class="row mx-auto">
-                <div class="info-box col-12 col-md-6 align-self-center mx-auto">
-                    <p class="text">Estado: </p>
-                    <div>{{$usuario->status}}</div>
-                    <box-icon name='lock-alt' type='solid' color='#ffffff' id="lock"></box-icon>
+                <div class="info-box col-12 col-md-6 mx-auto">
+                    <label for="status">Estado: </label>
+                    <select name="status" id="status">{{$usuario->statusName->status_name}}
+                        @foreach($statuses as $status)
+                            <option value={{$status->id}}>{{$status->status_name}}</option>
+                        @endforeach
+                      </select>
                 </div>
             </div>
             <div class="row mt-5 col col-sm-12 col-lg-12 col-xl-12 mx-auto">

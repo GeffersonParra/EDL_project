@@ -15,8 +15,8 @@
             <h1>EDL</h1>
         </a>
         <img class="foto h-25 rounded-circle col-8" src='{{ Storage::url($usuario->photo) }}'>
-        <h6 class="nombre mt-3">{{ $usuario->name }}</h6>
-        <h6 class="cargo">{{ $usuario->occupation }}
+        <h6 class="nombre mt-3">{{ $usuario->first_name }}</h6>
+        <h6 class="cargo">{{ $usuario->occupationName->occupation_name }}
             <div class="admin rounded-pill text-center mx-auto mt-2">Admin</div>
         </h6>
         <ul class="opciones d-flex">

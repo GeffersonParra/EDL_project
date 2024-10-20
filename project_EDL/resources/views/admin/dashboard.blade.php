@@ -3,7 +3,7 @@
 @section('title', 'Administrador | EDL')
 @section('content')
 @php
-$name = $usuario->name;
+$name = $usuario->first_name;
 @endphp
 @section('subtitle', "Bienvenid@, $name")
 <div class="container">

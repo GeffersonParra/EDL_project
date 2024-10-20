@@ -20,7 +20,7 @@
             <div class="row mx-auto">
                 <div class="info-box col-12 col-md-6">
                     <p class="text">Nombres: </p>
-                    <div>{{$usuario->name}}</div>
+                    <div>{{$usuario->first_name." ".$usuario->second_name}}</div>
                     <box-icon name='lock-alt' type='solid' color='#ffffff' class="lock"></box-icon>
                 </div>
                 <div class="info-box col-12 col-md-6 mt-1">
@@ -31,7 +31,7 @@
             <div class="row mx-auto">
                 <div class="info-box col-12 col-md-6">
                     <p class="text">Apellidos: </p>
-                    <div>{{$usuario->lastname}}</div>
+                    <div>{{$usuario->first_lastname." ".$usuario->second_lastname}}</div>
                     <box-icon name='lock-alt' type='solid' color='#ffffff' class="lock"></box-icon>
                 </div>
                 <div class="info-box col-12 col-md-6">
@@ -48,7 +48,7 @@
                 </div>
                 <div class="info-box col-12 col-md-6">
                     <p class="text">Tipo De Identificación: </p>
-                    <div>{{$usuario->idtype}}</div>
+                    <div>{{$usuario->idName->id_type}}</div>
                     <box-icon name='lock-alt' type='solid' color='#ffffff' class="lock"></box-icon>
                 </div>
             </div>
@@ -78,7 +78,7 @@
             <div class="row mx-auto">
                 <div class="info-box col-12 col-md-6">
                     <p class="text">Cargo: </p>
-                    <div>{{$usuario->occupation}}</div>
+                    <div>{{$usuario->occupationName->occupation_name}}</div>
                     <box-icon name='lock-alt' type='solid' color='#ffffff' class="lock"></box-icon>
                 </div>
                 <div class="info-box col-12 col-md-6 mt-1">
@@ -90,7 +90,7 @@
             <div class="row mx-auto">
                 <div class="info-box col-12 col-md-6 align-self-center mx-auto">
                     <p class="text">Estado: </p>
-                    <div>{{$usuario->status}}</div>
+                    <div>{{$usuario->statusName->status_name}}</div>
                     <box-icon name='lock-alt' type='solid' color='#ffffff' id="lock"></box-icon>
                 </div>
             </div>

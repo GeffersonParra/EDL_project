@@ -12,7 +12,7 @@ class EmployeeMiddleware
     public function handle(Request $request, Closure $next): Response
     {
         if (Auth::check()) {
-            if (Auth::user()->role === 0) {
+            if (Auth::user()->role_id === 2) {
                 return $next($request);
             } else
                 return response()->view('errors.403v2', [], 403);

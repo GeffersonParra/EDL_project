@@ -32,7 +32,7 @@ $name = $usuario->name;
                     </th>
                 </tr>
             </thead>
-            @foreach($usuarios as $empleado)
+            @foreach($empleados as $empleado)
             @if($empleado->id == $usuario->id)
             <tr class="user">
                 <td>
@@ -43,17 +43,17 @@ $name = $usuario->name;
                     <img class="mini-foto rounded-circle" src='{{ Storage::url($empleado->photo) }}'>
                 </td>
                 <td>
-                    <p class="mt-4" >{{ $empleado->name }}</p>
+                    <p class="mt-4" >{{ $empleado->first_name." ".$empleado->second_name }}</p>
                 </td>
                 <td>
-                    <p class="mt-4" >{{ $empleado->lastname }}</p>
+                    <p class="mt-4" >{{ $empleado->first_lastname." ".$empleado->second_lastname }}</p>
                 </td>
                 <td>
                     <div class="admin rounded-pill w-50 text-center mx-auto mt-2">Admin</div>
-                    <p>{{ $empleado->occupation }}</p>
+                    <p>{{ $empleado->occupationName->occupation_name }}</p>
                 </td>
                 <td>
-                    <p class="mt-4" >{{ $empleado->status }}</p>
+                    <p class="mt-4" >{{ $empleado->statusName->status_name }}</p>
                 </td>
             </tr>
             @elseif($empleado->role == 1 && $empleado->status != "DESPEDIDO")
@@ -65,17 +65,17 @@ $name = $usuario->name;
                     <img class="mini-foto rounded-circle" src='{{ Storage::url($empleado->photo) }}'>
                 </td>
                 <td>
-                    <p class="mt-4">{{ $empleado->name }}</p>
+                    <p class="mt-4" >{{ $empleado->first_name." ".$empleado->second_name }}</p>
                 </td>
                 <td>
-                    <p class="mt-4">{{ $empleado->lastname }}</p>
+                    <p class="mt-4" >{{ $empleado->first_lastname." ".$empleado->second_lastname }}</p>
                 </td>
                 <td>
                     <div class="admin rounded-pill w-50 text-center mx-auto mt-2">Admin</div>
-                    <p>{{ $empleado->occupation }}</p>
+                    <p>{{ $empleado->occupationName->occupation_name }}</p>
                 </td>
                 <td>
-                    <p class="mt-4">{{ $empleado->status }}</p>
+                    <p class="mt-4" >{{ $empleado->statusName->status_name }}</p>
                 </td>
             </tr>
             @else
@@ -87,16 +87,16 @@ $name = $usuario->name;
                     <img class="mini-foto rounded-circle" src='{{ Storage::url($empleado->photo) }}'>
                 </td>
                 <td>
-                    <p class="mt-4">{{ $empleado->name }}</p>
+                    <p class="mt-4" >{{ $empleado->first_name." ".$empleado->second_name }}</p>
                 </td>
                 <td>
-                    <p class="mt-4">{{ $empleado->lastname }}</p>
+                    <p class="mt-4" >{{ $empleado->first_lastname." ".$empleado->second_lastname }}</p>
                 </td>
                 <td>
-                    <p class="mt-4">{{ $empleado->occupation }}</p>
+                    <p class="mt-4">{{ $empleado->occupationName->occupation_name }}</p>
                 </td>
                 <td>
-                    <p class="mt-4">{{ $empleado->status }}</p>
+                    <p class="mt-4" >{{ $empleado->statusName->status_name }}</p>
                 </td>
             </tr>
             @endif

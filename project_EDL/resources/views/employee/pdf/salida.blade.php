@@ -93,8 +93,8 @@
         <h2 id="cargo-responsable">Gerente General</h2>
         <br>
         <h3 id="constar">Hace Constar:</h3>
-        <p id="text">Que {{ $usuario->name }} {{ $usuario->lastname }} identificado con {{ $usuario->idtype }} N°{{ $usuario->id }}, ha laborado en nuestra empresa EDL S.A.S con Nit 111111 desde el {{ $usuario->inday }} hasta {{ $usuario->outday }}.</p>
-        <p id="text">Durante su tiempo con nosotros, el/la Sr./Sra. {{ $usuario->name }} desempeñó el cargo de {{ $usuario->occupation }} con responsabilidad y dedicación habiendo cumplido con los procedimientos correspondientes según lo estipulado en la normativa interna de la empresa.</p>
+        <p id="text">Que {{ $usuario->first_name." ".$usuario->second_name }} {{ $usuario->first_lastname." ".$usuario->second_lastname }} identificado con {{ $usuario->idName->id_type }} N°{{ $usuario->id }}, ha laborado en nuestra empresa EDL S.A.S con Nit 111111 desde el {{ $usuario->inday }} hasta {{ $usuario->outday }}.</p>
+        <p id="text">Durante su tiempo con nosotros, el/la Sr./Sra. {{ $usuario->first_name }} desempeñó el cargo de {{ $usuario->occupationName->occupation_name }} con responsabilidad y dedicación habiendo cumplido con los procedimientos correspondientes según lo estipulado en la normativa interna de la empresa.</p>
         <p id="text">Se expide la presente constancia a solicitud del interesado para los fines que este estime por conveniente.</p>
         <p id="finaltext">Bogotá D.C, {{ $report->created_at->format('Y-m-d') }}</p>
     </div>

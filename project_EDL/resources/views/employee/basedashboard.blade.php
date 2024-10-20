@@ -36,15 +36,15 @@
             <div class="mini col-4 d-flex h-100 align-items-center" onclick="window.location.href='my_profile';">
                 <img class="mx-auto mini-img rounded-circle" src='{{ Storage::url($usuario->photo) }}'>
                     <div class="d-flex flex-column">
-                        <h6 class="mx-auto mini-text text-center col-12 mt-2">{{ $usuario->name }}</h6>
-                        <h6 class="mx-auto mini-occ col-12 mb-2">{{ $usuario->occupation }}</h6>
+                        <h6 class="mx-auto mini-text text-center col-12 mt-2">{{ $usuario->first_name }}</h6>
+                        <h6 class="mx-auto mini-occ col-12 mb-2">{{ $usuario->occupationName->occupation_name }}</h6>
                     </div>
                     
                 </div>
             </div>
             <img class="foto h-25 rounded-circle col-8" src='{{ Storage::url($usuario->photo) }}'>
-            <h6 class="nombre mt-3">{{ $usuario->name }}</h6>
-            <h6 class="cargo">{{ $usuario->occupation }}</h6>
+            <h6 class="nombre mt-3">{{ $usuario->first_name }}</h6>
+            <h6 class="cargo">{{ $usuario->occupationName->occupation_name }}</h6>
             <ul class="opciones d-flex">
                 <a href="#" id="encabezado">
                     <li class="list-item" id="normal-menu">Mi Perfil

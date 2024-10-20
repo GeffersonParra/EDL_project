@@ -9,7 +9,7 @@
     <div class="row mx-auto">
         <div class="info-box col-12 col-md-6">
             <p class="text">Nombres: </p>
-            <div>{{$usuario->name}}</div>
+            <div>{{$usuario->first_name." ".$usuario->second_name}}</div>
         </div>
         <div class="info-box col-12 col-md-6">
             <p class="text">Dirección: </p>
@@ -19,7 +19,7 @@
     <div class="row mx-auto">
         <div class="info-box col-12 col-md-6">
             <p class="text">Apellidos: </p>
-            <div>{{$usuario->lastname}}</div>
+            <div>{{$usuario->first_lastname." ".$usuario->second_lastname}}</div>
         </div>
         <div class="info-box col-12 col-md-6">
             <p class="text">Fecha de Nacimiento: </p>
@@ -33,7 +33,7 @@
         </div>
         <div class="info-box col-12 col-md-6">
             <p class="text">Tipo De Identificación: </p>
-            <div>{{$usuario->idtype}}</div>
+            <div>{{$usuario->idName->id_type}}</div>
         </div>
     </div>
     <div class="row mx-auto">
@@ -43,7 +43,11 @@
         </div>
         <div class="info-box col-12 col-md-6">
             <p class="text">Fecha de Salida: </p>
+            @if($usuario->outday == null)
+            <div>N/A</div>
+            @else
             <div>{{$usuario->outday}}</div>
+            @endif
         </div>
     </div>
     <div class="row mx-auto">
@@ -59,7 +63,7 @@
     <div class="row mx-auto">
         <div class="info-box col-12 col-md-6">
             <p class="text">Cargo: </p>
-            <div>{{$usuario->occupation}}</div>
+            <div>{{$usuario->occupationName->occupation_name}}</div>
         </div>
         <div class="info-box col-12 col-md-6">
             <p class="text">Proyecto Actual: </p>
@@ -69,7 +73,7 @@
     <div class="row mx-auto">
         <div class="info-box col-12 col-md-6 align-self-center mx-auto">
             <p class="text">Estado: </p>
-            <div style="font-weight: 700">{{$usuario->status}}</div>
+            <div style="font-weight: 700">{{$usuario->statusName->status_name}}</div>
         </div>
     </div>
     <a href="{{ route('my_profile.edit') }}">

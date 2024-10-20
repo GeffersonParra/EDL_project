@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\IdType;
+use App\Models\Occupation;
+use App\Models\Status;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Models\User;
@@ -23,8 +26,11 @@ class AdminController extends Controller
 
     public function edit(Request $request)
     {
+        $idtypes = IdType::all();
+        $occupations = Occupation::all();
         $usuario = $request->user();
-        return view('admin.editprofile', compact('usuario'));
+        $statuses = Status::all();
+        return view('admin.editprofile', compact('usuario', 'idtypes', 'occupations', 'statuses'));
     }
 
     public function update(Request $request, $id)
@@ -54,8 +60,8 @@ class AdminController extends Controller
     }
 
     public function employees(Request $request){
-        $usuarios = User::all();
+        $empleados = User::all();
         $usuario = $request->user();
-        return view("admin.employees", compact("usuarios", "usuario"));
+        return view("admin.employees", compact("empleados", "usuario"));
     }
 }
